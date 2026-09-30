@@ -1,0 +1,67 @@
+{
+  "version": "1",
+  "metadata": {
+    "marimo_version": "0.24.2",
+    "script_metadata_hash": "00441117d6719522e397cdcec4393ea1"
+  },
+  "cells": [
+    {
+      "id": "Hbol",
+      "code_hash": "1d0db38904205bec4d6f6f6a1f6cec3e",
+      "outputs": [],
+      "console": []
+    },
+    {
+      "id": "MJUe",
+      "code_hash": "f8d638e3f310b9d0986bba3414f299a0",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h1 id=\"resumo-do-trabalho-pratico-sudoku-generico-como-csp\">\ud83e\udde9 Resumo do Trabalho Pr\u00e1tico: Sudoku Gen\u00e9rico como CSP</h1>\n<h2 id=\"contexto-visao-geral\">\ud83d\udccb Contexto &amp; Vis\u00e3o Geral</h2>\n<span class=\"paragraph\">O Sudoku \u00e9 um exemplo cl\u00e1ssico de um <strong>Problema de Satisfa\u00e7\u00e3o de Restri\u00e7\u00f5es (CSP)</strong>. Em vez de codificar regras r\u00edgidas para linhas, colunas ou blocos de forma isolada, o objetivo deste trabalho \u00e9 <strong>abstrair a regra fundamental do Sudoku</strong>: qualquer grupo de c\u00e9lulas pertence a um conjunto onde todos os valores t\u00eam de ser distintos (<strong>AllDifferent</strong>) e alguns valores podem estar previamente fixados (pistas).</span>\n<span class=\"paragraph\">Com esta abstra\u00e7\u00e3o, linhas, colunas, blocos <marimo-tex class=\"arithmatex\">||(n \\times n||)</marimo-tex>, pistas iniciais e at\u00e9 variantes (diagonais, hiper-sudoku, etc.) passam a ser tratados exatamente da mesma forma pelo solver.</span>\n<hr />\n<h2 id=\"objetivos-principais\">\ud83c\udfaf Objetivos Principais</h2>\n<ol>\n<li><strong>Modelar</strong> a abstra\u00e7\u00e3o gen\u00e9rica de um grupo de c\u00e9lulas com a restri\u00e7\u00e3o \"todos diferentes\" (<code>box</code>).</li>\n<li><strong>Especializar</strong> a classe gen\u00e9rica para construir blocos <marimo-tex class=\"arithmatex\">||(n \\times n||)</marimo-tex> (<code>cube</code>) e sequ\u00eancias retas horizontais/verticais (<code>path</code>).</li>\n<li><strong>Gerar pistas aleat\u00f3rias</strong> de forma param\u00e9trica para criar tabuleiros de jogo.</li>\n<li><strong>Resolver</strong> a grelha <marimo-tex class=\"arithmatex\">||(n^2 \\times n^2||)</marimo-tex> montando e satisfazendo o modelo CSP com o <strong>OR-Tools (CP-SAT)</strong>.</li>\n</ol></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "vblA",
+      "code_hash": "4681d5586953b476c663d4bbe1f535c9",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h2 id=\"requisitos-obrigatorios-r1-a-r6\">\ud83d\udee0\ufe0f Requisitos Obrigat\u00f3rios (R1 a R6)</h2>\n<ul>\n<li><strong><code>box</code> \u2014 Grupo Gen\u00e9rico (R1):</strong><ul>\n<li>Guarda um mapeamento <code>(linha, coluna) \u2192 valor ou None</code>.</li>\n<li>M\u00e9todo <code>add(i, j, val=None)</code> que adiciona c\u00e9lulas ao grupo e <strong>rejeita</strong> (levanta exce\u00e7\u00e3o) limites fora da grelha ou valores fora do intervalo <marimo-tex class=\"arithmatex\">||([1, n^2]||)</marimo-tex>.</li>\n<li>M\u00e9todo para exportar a representa\u00e7\u00e3o como matriz <marimo-tex class=\"arithmatex\">||(n^2 \\times n^2||)</marimo-tex>.</li>\n<li><em>N\u00e3o sabe nada sobre Sudoku \u2014 apenas gere um grupo de c\u00e9lulas.</em></li>\n</ul>\n</li>\n<li><strong><code>cube</code> e <code>path</code> \u2014 Especializa\u00e7\u00f5es (R2 &amp; R3):</strong><ul>\n<li><strong>R2 (<code>cube</code>):</strong> Constr\u00f3i o bloco <marimo-tex class=\"arithmatex\">||(n \\times n||)</marimo-tex> para os \u00edndices de bloco <marimo-tex class=\"arithmatex\">||((i, j)||)</marimo-tex>.</li>\n<li><strong>R3 (<code>path</code>):</strong> Constr\u00f3i o tro\u00e7o reto (linha ou coluna) entre duas coordenadas <code>inicio</code> e <code>fim</code> (funciona em qualquer sentido).</li>\n</ul>\n</li>\n<li><strong><code>gerar_pistas</code> \u2014 Pistas Aleat\u00f3rias (R4):</strong><ul>\n<li>Fun\u00e7\u00e3o que devolve um <code>box</code> com <marimo-tex class=\"arithmatex\">||(k||)</marimo-tex> c\u00e9lulas escolhidas aleatoriamente na grelha e fixadas a valores v\u00e1lidos <marimo-tex class=\"arithmatex\">||([1, n^2]||)</marimo-tex>.</li>\n</ul>\n</li>\n<li><strong>Modelo e Resolu\u00e7\u00e3o CSP (R5 &amp; R6):</strong><ul>\n<li><strong>R5:</strong> Modelo CSP com uma vari\u00e1vel por c\u00e9lula <marimo-tex class=\"arithmatex\">||(X_{i,j} \\in [1, n^2]||)</marimo-tex>. Aceita um n\u00famero arbitr\u00e1rio de grupos (<code>box</code>, <code>cube</code>, <code>path</code>, pistas) e aplica a restri\u00e7\u00e3o <code>AllDifferent</code> e valores fixos.</li>\n<li><strong>R6:</strong> Junta todas as linhas, colunas, blocos <marimo-tex class=\"arithmatex\">||(n \\times n||)</marimo-tex> e o grupo de pistas para resolver a grelha.</li>\n</ul>\n</li>\n</ul></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "bkHC",
+      "code_hash": "f101f8c143989f53f7a495402b439b02",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h2 id=\"validacao-e-testes-automaticos\">\ud83e\uddea Valida\u00e7\u00e3o e Testes Autom\u00e1ticos</h2>\n<span class=\"paragraph\">O notebook (ou m\u00f3dulo de testes) deve validar automaticamente:</span>\n<ol>\n<li><strong>Integridade da Solu\u00e7\u00e3o:</strong> Confirmar que linhas, colunas e blocos cont\u00eam todos os valores de <marimo-tex class=\"arithmatex\">||(1 \\ldots n^2||)</marimo-tex> sem repeti\u00e7\u00f5es.</li>\n<li><strong>Preserva\u00e7\u00e3o de Pistas:</strong> Garantir que os valores fixos gerados aleatoriamente se mant\u00eam na solu\u00e7\u00e3o final.</li>\n<li><strong>Valida\u00e7\u00e3o de Limites:</strong> Confirmar que <code>add(...)</code> rejeita coordenadas ou valores inv\u00e1lidos.</li>\n<li><strong>Generaliza\u00e7\u00e3o de Dimens\u00e3o:</strong> Executar o fluxo completo para <marimo-tex class=\"arithmatex\">||(n=3||)</marimo-tex> (<marimo-tex class=\"arithmatex\">||(9 \\times 9||)</marimo-tex>) e para outro valor como <marimo-tex class=\"arithmatex\">||(n=2||)</marimo-tex> (<marimo-tex class=\"arithmatex\">||(4 \\times 4||)</marimo-tex>) para provar que a solu\u00e7\u00e3o n\u00e3o est\u00e1 <em>hardcoded</em>.</li>\n</ol>\n<hr />\n<h2 id=\"extensoes-opcionais-bonus\">\ud83c\udf1f Extens\u00f5es Opcionais (B\u00f3nus)</h2>\n<ul>\n<li><strong>X-Sudoku (Diagonal):</strong> Adicionar as duas diagonais principais como grupos <code>box</code> com restri\u00e7\u00e3o <code>AllDifferent</code>.</li>\n<li><strong>Hyper-Sudoku / Windoku:</strong> Adicionar 4 blocos sobrepostos suplementares.</li>\n<li><strong>Jigsaw / Sudoku Irregular:</strong> Criar regi\u00f5es de forma arbitr\u00e1ria como <code>box</code>.</li>\n<li><strong>Sudoku 3D:</strong> Estender a estrutura para grelhas <marimo-tex class=\"arithmatex\">||(n^2 \\times n^2 \\times n^2||)</marimo-tex>.</li>\n</ul></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "tAvr",
+      "code_hash": "ed9fd4553ba56933d104de39c3acfd1b",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": []
+    }
+  ]
+}
