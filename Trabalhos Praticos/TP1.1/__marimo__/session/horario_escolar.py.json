@@ -1,7 +1,7 @@
 {
   "version": "1",
   "metadata": {
-    "marimo_version": "0.25.0",
+    "marimo_version": "0.24.2",
     "script_metadata_hash": null
   },
   "cells": [
@@ -33,7 +33,7 @@
     },
     {
       "id": "vblA",
-      "code_hash": "233aaa1aadb50a39586f5118bfeca172",
+      "code_hash": "9b278b7e87df40341109059090db1c21",
       "outputs": [
         {
           "type": "data",
@@ -131,7 +131,7 @@
     },
     {
       "id": "RGSE",
-      "code_hash": "60ca7e07eb9e1bd9967780853a247558",
+      "code_hash": "3d3d52b8f67bdeacd698be8a1a1fcf1c",
       "outputs": [
         {
           "type": "data",
@@ -143,21 +143,21 @@
       "console": []
     },
     {
-      "id": "yETu",
-      "code_hash": "184ed9db5c0f9a9a68b4163c8a793d0b",
+      "id": "Kclp",
+      "code_hash": "aeaf40ac754c1b88c9d027eb5abdbd3f",
       "outputs": [
         {
           "type": "data",
           "data": {
-            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\"><em>R3.</em></span></span>"
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><ul>\n<li><strong>R3.</strong> No m\u00e1ximo uma aula da mesma disciplina por dia, por\n  turma \u2014 exceto disciplinas de duplo per\u00edodo (ver R4), em que o\n  bloco de 2 tempos conta como uma s\u00f3 ocorr\u00eancia nesse dia.</li>\n</ul></span>"
           }
         }
       ],
       "console": []
     },
     {
-      "id": "ZsOP",
-      "code_hash": "aed1f7a68f3b0713b13f9f8bd6ca1d4f",
+      "id": "emfo",
+      "code_hash": "500566ff53f6301a0d373b376a4db1e8",
       "outputs": [
         {
           "type": "data",
@@ -169,7 +169,7 @@
       "console": []
     },
     {
-      "id": "YUbp",
+      "id": "Hstk",
       "code_hash": "704b346dab7bcf162e0fe82d4b8c99d9",
       "outputs": [
         {
@@ -182,21 +182,21 @@
       "console": []
     },
     {
-      "id": "VJkp",
-      "code_hash": "db829e2978a6a3ce93b2a658b1583855",
+      "id": "nWHF",
+      "code_hash": "cfc81232036278651dceda2787b5d9d7",
       "outputs": [
         {
           "type": "data",
           "data": {
-            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\"><strong>R4</strong></span></span>"
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><ul>\n<li><strong>R4.</strong> Disciplinas marcadas <code>duplo_periodo=sim</code> s\u00f3 podem ser\n  dadas em blocos de 2 tempos consecutivos, no mesmo dia (nunca um\n  tempo isolado).</li>\n</ul></span>"
           }
         }
       ],
       "console": []
     },
     {
-      "id": "nrrg",
-      "code_hash": "ce5dcf4ffe47a5f1c64fe782641ca4c0",
+      "id": "iLit",
+      "code_hash": "725b8bc9b9c19ff68f6cc13cb7c085ce",
       "outputs": [
         {
           "type": "data",
@@ -208,13 +208,170 @@
       "console": []
     },
     {
-      "id": "XRCi",
+      "id": "ZHCJ",
       "code_hash": "65bed9ab39ffd0be8271875cd710509e",
       "outputs": [
         {
           "type": "data",
           "data": {
             "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\">O que isto garante</span>\n<span class=\"paragraph\">Por exemplo, com 6 per\u00edodos:</span>\n<span class=\"paragraph\">Per\u00edodo:    1  2  3  4  5  6\n            \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\n            EF EF</span>\n<span class=\"paragraph\">\u00e9 permitido.</span>\n<span class=\"paragraph\">Mas isto:</span>\n<span class=\"paragraph\">Per\u00edodo:    1  2  3  4  5  6\n            EF    EF</span>\n<span class=\"paragraph\">n\u00e3o \u00e9 permitido, porque n\u00e3o s\u00e3o consecutivos.</span>\n<span class=\"paragraph\">E isto:</span>\n<span class=\"paragraph\">Per\u00edodo:    1  2  3  4  5  6\n            EF</span>\n<span class=\"paragraph\">tamb\u00e9m n\u00e3o \u00e9 permitido em conjunto com a R2, porque a R2 exige que Educa\u00e7\u00e3o F\u00edsica tenha a carga semanal correspondente (2 no teu exemplo), enquanto a R4 obriga essas ocorr\u00eancias a aparecerem como um par consecutivo.</span>\n<span class=\"paragraph\">A raz\u00e3o de usarmos:</span>\n<span class=\"paragraph\">range(P - 1)</span>\n<span class=\"paragraph\">\u00e9 para podermos comparar:</span>\n<span class=\"paragraph\">periodo4</span>\n<span class=\"paragraph\">com:</span>\n<span class=\"paragraph\">periodo4 + 1</span>\n<span class=\"paragraph\">sem tentar aceder a um per\u00edodo que n\u00e3o existe.</span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "ROlb",
+      "code_hash": "1274a98f6686f02806e15dcf0fe12143",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><ul>\n<li><strong>R5.</strong> Um professor n\u00e3o pode dar duas aulas em simult\u00e2neo, mesmo\n  que sejam a turmas ou disciplinas diferentes.</li>\n</ul></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "qnkX",
+      "code_hash": "2c580119af249d109d8ebe66c301377a",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "TqIu",
+      "code_hash": "c9076341d6ca1b194bd9822a3b7243a9",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\"><strong>R6.</strong> Um professor s\u00f3 pode dar aulas nos tempos em que est\u00e1\n  dispon\u00edvel (<code>disponibilidade_excecoes.csv</code>).</span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "Vxnm",
+      "code_hash": "a115bdff5d47b58cde76d531a4902c70",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "DnEU",
+      "code_hash": "9cb069c93c9bc3da40f618ff3d2a673f",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><ul>\n<li><strong>R7.</strong> Cada aula ocupa uma sala. Disciplinas com <code>sala_especial</code>\n  s\u00f3 podem usar salas desse tipo; as restantes usam salas\n  <code>normal</code>. Em nenhum tempo o n\u00famero de aulas a decorrer num tipo\n  de sala pode exceder a <code>quantidade</code> desse tipo definida em\n  <code>salas.csv</code>.</li>\n</ul></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "ulZA",
+      "code_hash": "aca85eb454fc810d4c4ba8ed3da409a1",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "ecfG",
+      "code_hash": "776aa4a1773f96d3ae3a1a785c8992ee",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "Pvdt",
+      "code_hash": "c1177bc8a5790e1a083e4fb7bb5ee88d",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "ZBYS",
+      "code_hash": "22c8b19170359de4dfacb8aaab13daf1",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": [
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "Status: 0\n",
+          "mimetype": "text/plain"
+        }
+      ]
+    },
+    {
+      "id": "aLJB",
+      "code_hash": "65a3bab68d5bedb036d19648d4257533",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": [
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "Vari\u00e1veis: 1080\nRestri\u00e7\u00f5es: 1592\n",
+          "mimetype": "text/plain"
+        }
+      ]
+    },
+    {
+      "id": "vyKB",
+      "code_hash": "6b6fa780e237bf6e22f141881b5aa911",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<div style='display: flex;flex: 1;flex-direction: column;justify-content: flex-start;align-items: normal;flex-wrap: nowrap;gap: 0.5rem'><div style='display: flex;flex: 1;flex-direction: column;justify-content: flex-start;align-items: normal;flex-wrap: nowrap;gap: 0.5rem'><span class=\"markdown prose dark:prose-invert contents\"><h2 id=\"turma-7oa\">Turma 7\u00baA</h2></span><marimo-ui-element object-id='vyKB-0' random-id='d95cf17d-13c8-b46a-da59-1313f1a91041'><marimo-table data-initial-value='[]' data-label='null' data-data='&quot;[{&#92;&quot;_marimo_row_id&#92;&quot;:0,&#92;&quot;Per&#92;&#92;u00edodo&#92;&quot;:1,&#92;&quot;Seg&#92;&quot;:&#92;&quot;Portugu&#92;&#92;u00eas (Sala Normal)&#92;&quot;,&#92;&quot;Ter&#92;&quot;:&#92;&quot;Ci&#92;&#92;u00eancias (Laborat&#92;&#92;u00f3rio)&#92;&quot;,&#92;&quot;Qua&#92;&quot;:&#92;&quot;Hist&#92;&#92;u00f3ria (Sala Normal)&#92;&quot;,&#92;&quot;Qui&#92;&quot;:&#92;&quot;Ci&#92;&#92;u00eancias (Laborat&#92;&#92;u00f3rio)&#92;&quot;,&#92;&quot;Sex&#92;&quot;:&#92;&quot;Portugu&#92;&#92;u00eas (Sala Normal)&#92;&quot;},{&#92;&quot;_marimo_row_id&#92;&quot;:1,&#92;&quot;Per&#92;&#92;u00edodo&#92;&quot;:2,&#92;&quot;Seg&#92;&quot;:&#92;&quot;Ci&#92;&#92;u00eancias (Laborat&#92;&#92;u00f3rio)&#92;&quot;,&#92;&quot;Ter&#92;&quot;:&#92;&quot;Portugu&#92;&#92;u00eas (Sala Normal)&#92;&quot;,&#92;&quot;Qua&#92;&quot;:&#92;&quot;Portugu&#92;&#92;u00eas (Sala Normal)&#92;&quot;,&#92;&quot;Qui&#92;&quot;:&#92;&quot;Ingl&#92;&#92;u00eas (Sala Normal)&#92;&quot;,&#92;&quot;Sex&#92;&quot;:&#92;&quot;Hist&#92;&#92;u00f3ria (Sala Normal)&#92;&quot;},{&#92;&quot;_marimo_row_id&#92;&quot;:2,&#92;&quot;Per&#92;&#92;u00edodo&#92;&quot;:3,&#92;&quot;Seg&#92;&quot;:&#92;&quot;&#92;&quot;,&#92;&quot;Ter&#92;&quot;:&#92;&quot;Ingl&#92;&#92;u00eas (Sala Normal)&#92;&quot;,&#92;&quot;Qua&#92;&quot;:&#92;&quot;&#92;&quot;,&#92;&quot;Qui&#92;&quot;:&#92;&quot;&#92;&quot;,&#92;&quot;Sex&#92;&quot;:&#92;&quot;&#92;&quot;},{&#92;&quot;_marimo_row_id&#92;&quot;:3,&#92;&quot;Per&#92;&#92;u00edodo&#92;&quot;:4,&#92;&quot;Seg&#92;&quot;:&#92;&quot;&#92;&quot;,&#92;&quot;Ter&#92;&quot;:&#92;&quot;Educa&#92;&#92;u00e7&#92;&#92;u00e3o F&#92;&#92;u00edsica (Gin&#92;&#92;u00e1sio)&#92;&quot;,&#92;&quot;Qua&#92;&quot;:&#92;&quot;&#92;&quot;,&#92;&quot;Qui&#92;&quot;:&#92;&quot;&#92;&quot;,&#92;&quot;Sex&#92;&quot;:&#92;&quot;&#92;&quot;},{&#92;&quot;_marimo_row_id&#92;&quot;:4,&#92;&quot;Per&#92;&#92;u00edodo&#92;&quot;:5,&#92;&quot;Seg&#92;&quot;:&#92;&quot;&#92;&quot;,&#92;&quot;Ter&#92;&quot;:&#92;&quot;Educa&#92;&#92;u00e7&#92;&#92;u00e3o F&#92;&#92;u00edsica (Gin&#92;&#92;u00e1sio)&#92;&quot;,&#92;&quot;Qua&#92;&quot;:&#92;&quot;&#92;&quot;,&#92;&quot;Qui&#92;&quot;:&#92;&quot;&#92;&quot;,&#92;&quot;Sex&#92;&quot;:&#92;&quot;&#92;&quot;},{&#92;&quot;_marimo_row_id&#92;&quot;:5,&#92;&quot;Per&#92;&#92;u00edodo&#92;&quot;:6,&#92;&quot;Seg&#92;&quot;:&#92;&quot;&#92;&quot;,&#92;&quot;Ter&#92;&quot;:&#92;&quot;&#92;&quot;,&#92;&quot;Qua&#92;&quot;:&#92;&quot;&#92;&quot;,&#92;&quot;Qui&#92;&quot;:&#92;&quot;&#92;&quot;,&#92;&quot;Sex&#92;&quot;:&#92;&quot;&#92;&quot;}]&quot;' data-total-rows='6' data-total-columns='6' data-max-columns='50' data-banner-text='&quot;&quot;' data-pagination='false' data-page-size='10' data-field-types='[[&quot;Per\u00edodo&quot;,[&quot;integer&quot;,&quot;int64&quot;]],[&quot;Seg&quot;,[&quot;string&quot;,&quot;str&quot;]],[&quot;Ter&quot;,[&quot;string&quot;,&quot;str&quot;]],[&quot;Qua&quot;,[&quot;string&quot;,&quot;str&quot;]],[&quot;Qui&quot;,[&quot;string&quot;,&quot;str&quot;]],[&quot;Sex&quot;,[&quot;string&quot;,&quot;str&quot;]]]' data-selection='&quot;multi&quot;' data-show-filters='true' data-show-download='true' data-show-search='true' data-show-column-summaries='false' data-show-data-types='true' data-show-page-size-selector='true' data-show-column-explorer='true' data-show-chart-builder='true' data-row-headers='[]' data-hidden-columns='[]' data-has-stable-row-id='true' data-lazy='false' data-preload='false'></marimo-table></marimo-ui-element></div><div style='display: flex;flex: 1;flex-direction: column;justify-content: flex-start;align-items: normal;flex-wrap: nowrap;gap: 0.5rem'><span class=\"markdown prose dark:prose-invert contents\"><h2 id=\"turma-7ob\">Turma 7\u00baB</h2></span><marimo-ui-element object-id='vyKB-1' random-id='2aa0f154-0c45-17e6-5e90-8261e47eb9f3'><marimo-table data-initial-value='[]' data-label='null' data-data='&quot;[{&#92;&quot;_marimo_row_id&#92;&quot;:0,&#92;&quot;Per&#92;&#92;u00edodo&#92;&quot;:1,&#92;&quot;Seg&#92;&quot;:&#92;&quot;Hist&#92;&#92;u00f3ria (Sala Normal)&#92;&quot;,&#92;&quot;Ter&#92;&quot;:&#92;&quot;Portugu&#92;&#92;u00eas (Sala Normal)&#92;&quot;,&#92;&quot;Qua&#92;&quot;:&#92;&quot;Ci&#92;&#92;u00eancias (Laborat&#92;&#92;u00f3rio)&#92;&quot;,&#92;&quot;Qui&#92;&quot;:&#92;&quot;Hist&#92;&#92;u00f3ria (Sala Normal)&#92;&quot;,&#92;&quot;Sex&#92;&quot;:&#92;&quot;Ci&#92;&#92;u00eancias (Laborat&#92;&#92;u00f3rio)&#92;&quot;},{&#92;&quot;_marimo_row_id&#92;&quot;:1,&#92;&quot;Per&#92;&#92;u00edodo&#92;&quot;:2,&#92;&quot;Seg&#92;&quot;:&#92;&quot;Portugu&#92;&#92;u00eas (Sala Normal)&#92;&quot;,&#92;&quot;Ter&#92;&quot;:&#92;&quot;Ci&#92;&#92;u00eancias (Laborat&#92;&#92;u00f3rio)&#92;&quot;,&#92;&quot;Qua&#92;&quot;:&#92;&quot;Ingl&#92;&#92;u00eas (Sala Normal)&#92;&quot;,&#92;&quot;Qui&#92;&quot;:&#92;&quot;Portugu&#92;&#92;u00eas (Sala Normal)&#92;&quot;,&#92;&quot;Sex&#92;&quot;:&#92;&quot;Portugu&#92;&#92;u00eas (Sala Normal)&#92;&quot;},{&#92;&quot;_marimo_row_id&#92;&quot;:2,&#92;&quot;Per&#92;&#92;u00edodo&#92;&quot;:3,&#92;&quot;Seg&#92;&quot;:&#92;&quot;Ingl&#92;&#92;u00eas (Sala Normal)&#92;&quot;,&#92;&quot;Ter&#92;&quot;:&#92;&quot;&#92;&quot;,&#92;&quot;Qua&#92;&quot;:&#92;&quot;&#92;&quot;,&#92;&quot;Qui&#92;&quot;:&#92;&quot;&#92;&quot;,&#92;&quot;Sex&#92;&quot;:&#92;&quot;&#92;&quot;},{&#92;&quot;_marimo_row_id&#92;&quot;:3,&#92;&quot;Per&#92;&#92;u00edodo&#92;&quot;:4,&#92;&quot;Seg&#92;&quot;:&#92;&quot;&#92;&quot;,&#92;&quot;Ter&#92;&quot;:&#92;&quot;&#92;&quot;,&#92;&quot;Qua&#92;&quot;:&#92;&quot;&#92;&quot;,&#92;&quot;Qui&#92;&quot;:&#92;&quot;&#92;&quot;,&#92;&quot;Sex&#92;&quot;:&#92;&quot;Educa&#92;&#92;u00e7&#92;&#92;u00e3o F&#92;&#92;u00edsica (Gin&#92;&#92;u00e1sio)&#92;&quot;},{&#92;&quot;_marimo_row_id&#92;&quot;:4,&#92;&quot;Per&#92;&#92;u00edodo&#92;&quot;:5,&#92;&quot;Seg&#92;&quot;:&#92;&quot;&#92;&quot;,&#92;&quot;Ter&#92;&quot;:&#92;&quot;&#92;&quot;,&#92;&quot;Qua&#92;&quot;:&#92;&quot;&#92;&quot;,&#92;&quot;Qui&#92;&quot;:&#92;&quot;&#92;&quot;,&#92;&quot;Sex&#92;&quot;:&#92;&quot;Educa&#92;&#92;u00e7&#92;&#92;u00e3o F&#92;&#92;u00edsica (Gin&#92;&#92;u00e1sio)&#92;&quot;},{&#92;&quot;_marimo_row_id&#92;&quot;:5,&#92;&quot;Per&#92;&#92;u00edodo&#92;&quot;:6,&#92;&quot;Seg&#92;&quot;:&#92;&quot;&#92;&quot;,&#92;&quot;Ter&#92;&quot;:&#92;&quot;&#92;&quot;,&#92;&quot;Qua&#92;&quot;:&#92;&quot;&#92;&quot;,&#92;&quot;Qui&#92;&quot;:&#92;&quot;&#92;&quot;,&#92;&quot;Sex&#92;&quot;:&#92;&quot;&#92;&quot;}]&quot;' data-total-rows='6' data-total-columns='6' data-max-columns='50' data-banner-text='&quot;&quot;' data-pagination='false' data-page-size='10' data-field-types='[[&quot;Per\u00edodo&quot;,[&quot;integer&quot;,&quot;int64&quot;]],[&quot;Seg&quot;,[&quot;string&quot;,&quot;str&quot;]],[&quot;Ter&quot;,[&quot;string&quot;,&quot;str&quot;]],[&quot;Qua&quot;,[&quot;string&quot;,&quot;str&quot;]],[&quot;Qui&quot;,[&quot;string&quot;,&quot;str&quot;]],[&quot;Sex&quot;,[&quot;string&quot;,&quot;str&quot;]]]' data-selection='&quot;multi&quot;' data-show-filters='true' data-show-download='true' data-show-search='true' data-show-column-summaries='false' data-show-data-types='true' data-show-page-size-selector='true' data-show-column-explorer='true' data-show-chart-builder='true' data-row-headers='[]' data-hidden-columns='[]' data-has-stable-row-id='true' data-lazy='false' data-preload='false'></marimo-table></marimo-ui-element></div></div>"
           }
         }
       ],
