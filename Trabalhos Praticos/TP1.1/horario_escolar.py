@@ -1,6 +1,6 @@
 import marimo
 
-__generated_with = "0.25.0"
+__generated_with = "0.24.2"
 app = marimo.App(width="medium")
 
 
@@ -1194,7 +1194,30 @@ def _(aulas_alteradas, tempo_h1, tempo_h1_zero):
 @app.cell(hide_code=True)
 def _(mo):
     mo.md(r"""
- 
+    ## Discussão de Resultados e Construção Incremental (R9)
+
+    ### 1. Mecanismo de Warm-Start (`SetHint`)
+    Para resolver o cálculo de `H1` de forma eficiente após as alterações nos recursos em `dados_v2/`, utilizou-se o método `SetHint` do OR-Tools SCIP.
+    * O mapa de atribuições do horário original `H0` foi passado ao solver como uma **dica inicial (warm-start)**.
+    * Isto permite ao solver começar a procura a partir de uma solução quase viável, reduzindo drasticamente o espaço de procura e o número de nós explorados na árvore do Branch-and-Bound.
+
+    ---
+
+    ### 2. Minimização do Impacto (Perturbação Mínima)
+    Além do *warm-start*, a função objetivo de `H1` foi redefinida para **maximizar a semelhança com `H0`**:
+    $$\text{Minimizar} \sum_{\text{chaves} \in H0} (1 - x_{H1}[\text{chave}])$$
+
+    * **Objetivo:** Garantir que o menor número possível de aulas mude de dia, período ou sala em relação ao horário inicial `H0`.
+    * Desta forma, cumprem-se as novas restrições de disponibilidade (ex.: a indisponibilidade da Prof. Ana às sextas-feiras) alterando apenas o estritamente necessário no horário escolar pré-existente.
+
+    ---
+
+    ### 3. Comparação de Desempenho (`H1` Incremental vs `H1` do Zero)
+    Como demonstrado na execução das células anteriores:
+    * **`H1` Incremental (com `SetHint` e Otimização do Impacto):** Encontra a solução válida em **fração de segundo** (`tempo_h1`), mantendo o número de `aulas_alteradas` no valor estritamente mínimo.
+    * **`H1` do Zero (sem *hints*):** Demora significativamente mais tempo (`tempo_h1_zero`) a explorar todo o espaço de procura a partir do início.
+
+      **Conclusão:** A abordagem incremental cumpre com sucesso o requisito **R9**, permitindo à escola reagir a pequenas alterações de recursos em tempo real com o mínimo de perturbação para professores e turmas.
     """)
     return
 
