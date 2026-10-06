@@ -1,7 +1,7 @@
 {
   "version": "1",
   "metadata": {
-    "marimo_version": "0.24.2",
+    "marimo_version": "0.25.0",
     "script_metadata_hash": null
   },
   "cells": [
@@ -59,7 +59,7 @@
         {
           "type": "stream",
           "name": "stdout",
-          "text": "TURMAS\n  turma\n0   7\u00baA\n1   7\u00baB\n\nDISCIPLINAS\n        disciplina      professor  carga_semanal duplo_periodo sala_especial\n0       Matem\u00e1tica      Prof. Ana            NaN           nao           NaN\n1        Portugu\u00eas    Prof. Bruno            4.0           nao           NaN\n2         Ci\u00eancias    Prof. Carla            3.0           nao   Laborat\u00f3rio\n3         Hist\u00f3ria    Prof. Diana            2.0           nao           NaN\n4           Ingl\u00eas    Prof. Diana            2.0           nao           NaN\n5  Educa\u00e7\u00e3o F\u00edsica  Prof. Eduardo            2.0           sim       Gin\u00e1sio\n\nSALAS\n          sala      tipo  quantidade\n0  Sala Normal    normal           6\n1  Laborat\u00f3rio  especial           1\n2      Gin\u00e1sio  especial           1\n",
+          "text": "TURMAS\n  turma\n0   7\u00baA\n1   7\u00baB\n\nDISCIPLINAS\n        disciplina      professor  carga_semanal duplo_periodo sala_especial\n0       Matem\u00e1tica      Prof. Ana              4           nao           NaN\n1        Portugu\u00eas    Prof. Bruno              4           nao           NaN\n2         Ci\u00eancias    Prof. Carla              3           nao   Laborat\u00f3rio\n3         Hist\u00f3ria    Prof. Diana              2           nao           NaN\n4           Ingl\u00eas    Prof. Diana              2           nao           NaN\n5  Educa\u00e7\u00e3o F\u00edsica  Prof. Eduardo              2           sim       Gin\u00e1sio\n\nSALAS\n          sala      tipo  quantidade\n0  Sala Normal    normal           6\n1  Laborat\u00f3rio  especial           1\n2      Gin\u00e1sio  especial           1\n",
           "mimetype": "text/plain"
         }
       ]
@@ -92,12 +92,12 @@
     },
     {
       "id": "Xref",
-      "code_hash": "211cb8c9557905d37ff87b81e9d2b0ee",
+      "code_hash": "9d96a9a778f859e9e216c42849575fcd",
       "outputs": [
         {
           "type": "data",
           "data": {
-            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\"><strong>R1.</strong> Uma turma n\u00e3o pode ter duas aulas em simult\u00e2neo</span></span>"
+            "text/plain": ""
           }
         }
       ],
@@ -105,7 +105,7 @@
     },
     {
       "id": "SFPL",
-      "code_hash": "b0ac6da51f1aba43765b830cc0241008",
+      "code_hash": "3d8685abf48fffc43d8dad6125af0b5e",
       "outputs": [
         {
           "type": "data",
@@ -118,12 +118,12 @@
     },
     {
       "id": "BYtC",
-      "code_hash": "fccd26e9d03b319ade94682c0c77b261",
+      "code_hash": "a3edf021ac173900879a8f6415ed6a3f",
       "outputs": [
         {
           "type": "data",
           "data": {
-            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\"><strong>R2.</strong> Cada disciplina cumpre <em>exatamente</em> a carga semanal definida em <code>disciplinas.csv</code>, para cada turma</span></span>"
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><ul>\n<li><strong>R1.</strong> Uma turma n\u00e3o pode ter duas aulas em simult\u00e2neo</li>\n</ul></span>"
           }
         }
       ],
@@ -131,12 +131,12 @@
     },
     {
       "id": "RGSE",
-      "code_hash": "3d3d52b8f67bdeacd698be8a1a1fcf1c",
+      "code_hash": "29e65ffe86cffc62d527b92a138b1300",
       "outputs": [
         {
           "type": "data",
           "data": {
-            "text/plain": ""
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\">Nesta restri\u00e7\u00e3o percorremos todas as turmas, dias e per\u00edodos poss\u00edveis.</span>\n<span class=\"paragraph\">Para cada combina\u00e7\u00e3o, fazemos a soma das vari\u00e1veis x correspondentes a todas as disciplinas e salas. Como cada vari\u00e1vel x pode assumir apenas os valores 0 ou 1, esta soma representa o n\u00famero de aulas que est\u00e3o marcadas para aquela turma nesse determinado dia e per\u00edodo.</span>\n<span class=\"paragraph\">Ao impor que a soma seja menor ou igual a 1, garantimos que uma turma pode ter no m\u00e1ximo uma aula em cada per\u00edodo. Assim, nunca podem existir duas aulas da mesma turma a acontecer simultaneamente.</span></span>"
           }
         }
       ],
@@ -144,6 +144,32 @@
     },
     {
       "id": "Kclp",
+      "code_hash": "cf086417dad0da93a3df44fb1c2c2e00",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><ul>\n<li><strong>R2.</strong> Cada disciplina cumpre <em>exatamente</em> a carga semanal definida em <code>disciplinas.csv</code>, para cada turma</li>\n</ul></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "emfo",
+      "code_hash": "47f21e86c98162fc6acd33f6a1de51f6",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\">Nesta restri\u00e7\u00e3o percorremos todas as turmas e todas as disciplinas. Para cada disciplina, \u00e9 obtido o valor da sua carga_semanal a partir do ficheiro disciplinas.csv.</span>\n<span class=\"paragraph\">De seguida, somamos todas as vari\u00e1veis x dessa disciplina ao longo de todas as salas, dias e per\u00edodos. Esta soma representa o n\u00famero total de aulas dessa disciplina durante a semana para uma determinada turma.</span>\n<span class=\"paragraph\">Ao impor que a soma seja exatamente igual \u00e0 carga semanal, garantimos que a disciplina aparece o n\u00famero de vezes definido no ficheiro. Por exemplo, uma disciplina com carga semanal de 4 ter\u00e1 exatamente 4 aulas durante a semana para cada turma.</span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "Hstk",
       "code_hash": "aeaf40ac754c1b88c9d027eb5abdbd3f",
       "outputs": [
         {
@@ -156,33 +182,20 @@
       "console": []
     },
     {
-      "id": "emfo",
-      "code_hash": "500566ff53f6301a0d373b376a4db1e8",
-      "outputs": [
-        {
-          "type": "data",
-          "data": {
-            "text/plain": ""
-          }
-        }
-      ],
-      "console": []
-    },
-    {
-      "id": "Hstk",
-      "code_hash": "704b346dab7bcf162e0fe82d4b8c99d9",
-      "outputs": [
-        {
-          "type": "data",
-          "data": {
-            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\">O que est\u00e1 a acontecer</span>\n<span class=\"paragraph\">Para cada:</span>\n<span class=\"paragraph\">t3 \u2192 turma\ndi3 \u2192 disciplina normal\ndia3 \u2192 dia</span>\n<span class=\"paragraph\">somamos todos os per\u00edodos e salas:</span>\n<span class=\"paragraph\">sum(\n    x[t3, di3, sala3, dia3, periodo3]\n    for sala3 in salas[\"sala\"]\n    for periodo3 in range(P)\n)</span>\n<span class=\"paragraph\">e obrigamos:</span>\n<span class=\"paragraph\">&lt;= 1</span>\n<span class=\"paragraph\">Portanto, se Matem\u00e1tica tem:</span>\n<span class=\"paragraph\">Segunda:\n  per\u00edodo 1 \u2192 Matem\u00e1tica\n  per\u00edodo 2 \u2192 -\n  per\u00edodo 3 \u2192 Matem\u00e1tica</span>\n<span class=\"paragraph\">a soma seria 2, logo \u00e9 proibido.</span>\n<span class=\"paragraph\">J\u00e1 uma disciplina como Educa\u00e7\u00e3o F\u00edsica, que tem duplo_periodo = sim, fica de fora desta restri\u00e7\u00e3o e ser\u00e1 tratada na R4, onde vamos obrigar os dois per\u00edodos a serem consecutivos.</span></span>"
-          }
-        }
-      ],
-      "console": []
-    },
-    {
       "id": "nWHF",
+      "code_hash": "4f857a882cea334c8c6379e6a30a91aa",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\">Nesta restri\u00e7\u00e3o percorremos todas as turmas, apenas as disciplinas que n\u00e3o s\u00e3o de duplo per\u00edodo, e todos os dias da semana.</span>\n<span class=\"paragraph\">Para cada turma, disciplina e dia, somamos as vari\u00e1veis x de todos os per\u00edodos e salas. Esta soma representa o n\u00famero de aulas dessa disciplina nesse dia.</span>\n<span class=\"paragraph\">Ao impor que a soma seja menor ou igual a 1, garantimos que uma disciplina n\u00e3o pode aparecer mais do que uma vez no mesmo dia para a mesma turma.</span>\n<span class=\"paragraph\">As disciplinas de duplo per\u00edodo n\u00e3o s\u00e3o consideradas nesta restri\u00e7\u00e3o, pois s\u00e3o tratadas separadamente na R4, onde os dois per\u00edodos consecutivos s\u00e3o considerados como uma \u00fanica ocorr\u00eancia da disciplina nesse dia.</span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "iLit",
       "code_hash": "cfc81232036278651dceda2787b5d9d7",
       "outputs": [
         {
@@ -195,26 +208,13 @@
       "console": []
     },
     {
-      "id": "iLit",
-      "code_hash": "725b8bc9b9c19ff68f6cc13cb7c085ce",
-      "outputs": [
-        {
-          "type": "data",
-          "data": {
-            "text/plain": ""
-          }
-        }
-      ],
-      "console": []
-    },
-    {
       "id": "ZHCJ",
-      "code_hash": "65bed9ab39ffd0be8271875cd710509e",
+      "code_hash": "03b8a75ce16b166f8267dfb146b171cd",
       "outputs": [
         {
           "type": "data",
           "data": {
-            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\">O que isto garante</span>\n<span class=\"paragraph\">Por exemplo, com 6 per\u00edodos:</span>\n<span class=\"paragraph\">Per\u00edodo:    1  2  3  4  5  6\n            \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\n            EF EF</span>\n<span class=\"paragraph\">\u00e9 permitido.</span>\n<span class=\"paragraph\">Mas isto:</span>\n<span class=\"paragraph\">Per\u00edodo:    1  2  3  4  5  6\n            EF    EF</span>\n<span class=\"paragraph\">n\u00e3o \u00e9 permitido, porque n\u00e3o s\u00e3o consecutivos.</span>\n<span class=\"paragraph\">E isto:</span>\n<span class=\"paragraph\">Per\u00edodo:    1  2  3  4  5  6\n            EF</span>\n<span class=\"paragraph\">tamb\u00e9m n\u00e3o \u00e9 permitido em conjunto com a R2, porque a R2 exige que Educa\u00e7\u00e3o F\u00edsica tenha a carga semanal correspondente (2 no teu exemplo), enquanto a R4 obriga essas ocorr\u00eancias a aparecerem como um par consecutivo.</span>\n<span class=\"paragraph\">A raz\u00e3o de usarmos:</span>\n<span class=\"paragraph\">range(P - 1)</span>\n<span class=\"paragraph\">\u00e9 para podermos comparar:</span>\n<span class=\"paragraph\">periodo4</span>\n<span class=\"paragraph\">com:</span>\n<span class=\"paragraph\">periodo4 + 1</span>\n<span class=\"paragraph\">sem tentar aceder a um per\u00edodo que n\u00e3o existe.</span></span>"
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\">Come\u00e7amos por percorrer todas as turmas, as disciplinas marcadas como duplo_periodo = sim e todos os dias da semana.\nO objetivo \u00e9 garantir que, quando uma destas disciplinas \u00e9 lecionada, os seus dois tempos acontecem consecutivamente no mesmo dia.</span>\n<h2 id=\"primeiro-periodo\">Primeiro per\u00edodo</h2>\n<span class=\"paragraph\">No primeiro per\u00edodo n\u00e3o existe um per\u00edodo anterior, por isso verificamos apenas o per\u00edodo seguinte.\nSe existir uma aula no per\u00edodo 0, tem obrigatoriamente de existir tamb\u00e9m no per\u00edodo 1.\nAssim, n\u00e3o \u00e9 poss\u00edvel come\u00e7ar um bloco de duplo per\u00edodo no primeiro tempo e deixar o segundo tempo vazio.</span>\n<h2 id=\"ultimo-periodo\">\u00daltimo per\u00edodo</h2>\n<span class=\"paragraph\">No \u00faltimo per\u00edodo n\u00e3o existe um per\u00edodo seguinte, por isso verificamos apenas o per\u00edodo anterior.\nSe existir uma aula no \u00faltimo per\u00edodo, tem obrigatoriamente de existir tamb\u00e9m no per\u00edodo imediatamente anterior.\nDesta forma, o \u00faltimo per\u00edodo nunca pode ser utilizado isoladamente.</span>\n<h2 id=\"periodos-intermedios\">Per\u00edodos interm\u00e9dios</h2>\n<span class=\"paragraph\">Para os per\u00edodos interm\u00e9dios, verificamos os dois per\u00edodos vizinhos.\nSe existir uma aula nesse per\u00edodo, pelo menos um dos per\u00edodos adjacentes tamb\u00e9m tem de ter uma aula da mesma disciplina.</span>\n<span class=\"paragraph\">Como a R2 garante que a disciplina cumpre a sua carga semanal e, neste caso, a disciplina de duplo per\u00edodo tem carga de 2, estas condi\u00e7\u00f5es fazem com que as duas aulas tenham de formar um bloco de dois per\u00edodos consecutivos.</span>\n<span class=\"paragraph\">Desta forma, uma disciplina de duplo per\u00edodo nunca pode aparecer num \u00fanico tempo isolado nem em dois tempos separados.</span></span>"
           }
         }
       ],
@@ -235,12 +235,12 @@
     },
     {
       "id": "qnkX",
-      "code_hash": "2c580119af249d109d8ebe66c301377a",
+      "code_hash": "de334ee542a25fb3ab356ea465e2ccf7",
       "outputs": [
         {
           "type": "data",
           "data": {
-            "text/plain": ""
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\">Nesta restri\u00e7\u00e3o percorremos todos os professores, dias e per\u00edodos poss\u00edveis.</span>\n<span class=\"paragraph\">Para cada professor, consideramos todas as turmas e todas as disciplinas que s\u00e3o lecionadas por esse professor, assim como todas as salas poss\u00edveis.</span>\n<span class=\"paragraph\">A soma das vari\u00e1veis x representa o n\u00famero de aulas que esse professor teria no mesmo dia e per\u00edodo.</span>\n<span class=\"paragraph\">Ao impor que essa soma seja menor ou igual a 1, garantimos que um professor pode estar associado a, no m\u00e1ximo, uma aula em cada momento.</span>\n<span class=\"paragraph\">Desta forma, o mesmo professor n\u00e3o pode dar duas aulas simultaneamente, mesmo que essas aulas perten\u00e7am a turmas ou disciplinas diferentes.</span></span>"
           }
         }
       ],
@@ -261,12 +261,12 @@
     },
     {
       "id": "Vxnm",
-      "code_hash": "a115bdff5d47b58cde76d531a4902c70",
+      "code_hash": "4c1fe48bac4860c07aa04421e8b546e1",
       "outputs": [
         {
           "type": "data",
           "data": {
-            "text/plain": ""
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\">Como os dias no ficheiro disponibilidade_excecoes.csv est\u00e3o representados por texto, \u00e9 criado um dicion\u00e1rio para os converter para os \u00edndices utilizados pelo modelo.</span>\n<span class=\"paragraph\">Por exemplo, Seg corresponde ao \u00edndice 0 e Sex ao \u00edndice 4.</span>\n<span class=\"paragraph\">Percorremos todas as exce\u00e7\u00f5es presentes no ficheiro.</span>\n<span class=\"paragraph\">Para cada uma, identificamos o professor, o dia e o per\u00edodo em que esse professor n\u00e3o est\u00e1 dispon\u00edvel.</span>\n<span class=\"paragraph\">O -1 no per\u00edodo \u00e9 necess\u00e1rio porque no ficheiro os per\u00edodos come\u00e7am em 1, enquanto no modelo come\u00e7am em 0.</span>\n<span class=\"paragraph\">Depois percorremos todas as turmas, disciplinas desse professor e salas poss\u00edveis.</span>\n<span class=\"paragraph\">Para cada combina\u00e7\u00e3o, a vari\u00e1vel x correspondente ao hor\u00e1rio indispon\u00edvel \u00e9 fixada a 0.</span>\n<span class=\"paragraph\">Isto significa que o solver n\u00e3o pode colocar nenhuma aula desse professor nesse dia e per\u00edodo, independentemente da turma ou da sala.</span>\n<span class=\"paragraph\">Assim, as exce\u00e7\u00f5es definidas no ficheiro s\u00e3o respeitadas pelo hor\u00e1rio gerado.</span></span>"
           }
         }
       ],
@@ -287,12 +287,12 @@
     },
     {
       "id": "ulZA",
-      "code_hash": "aca85eb454fc810d4c4ba8ed3da409a1",
+      "code_hash": "d844aa12ce900184bdbbdfeefb42ae92",
       "outputs": [
         {
           "type": "data",
           "data": {
-            "text/plain": ""
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h2 id=\"cada-aula-ocupa-no-maximo-uma-sala\">Cada aula ocupa no m\u00e1ximo uma sala</h2>\n<span class=\"paragraph\">Nesta parte percorremos todas as turmas, disciplinas, dias e per\u00edodos.</span>\n<span class=\"paragraph\">Para cada combina\u00e7\u00e3o, somamos as vari\u00e1veis x correspondentes a todas as salas poss\u00edveis.</span>\n<span class=\"paragraph\">Como cada vari\u00e1vel indica se a aula est\u00e1 atribu\u00edda (1) ou n\u00e3o (0) a uma determinada sala, a soma representa o n\u00famero de salas atribu\u00eddas \u00e0quela aula naquele momento.</span>\n<span class=\"paragraph\">Ao impor que a soma seja menor ou igual a 1, garantimos que uma aula n\u00e3o pode ocupar mais do que uma sala simultaneamente.</span>\n<span class=\"paragraph\">Esta restri\u00e7\u00e3o, em conjunto com as restantes partes da R7, garante que cada aula fica associada a uma \u00fanica sala adequada.</span></span>"
           }
         }
       ],
@@ -300,12 +300,12 @@
     },
     {
       "id": "ecfG",
-      "code_hash": "776aa4a1773f96d3ae3a1a785c8992ee",
+      "code_hash": "df2bab9558910ae84620d478cc07485f",
       "outputs": [
         {
           "type": "data",
           "data": {
-            "text/plain": ""
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h2 id=\"sala-adequada-a-disciplina\">Sala adequada \u00e0 disciplina</h2>\n<span class=\"paragraph\">Para cada turma e disciplina, come\u00e7amos por consultar no disciplinas.csv qual \u00e9 a sala necess\u00e1ria para essa disciplina.</span>\n<span class=\"paragraph\">Se o campo sala_especial estiver vazio, significa que a disciplina n\u00e3o necessita de uma sala espec\u00edfica. Nesse caso, definimos a sala como Sala Normal</span>\n<span class=\"paragraph\">De seguida, percorremos todas as salas dispon\u00edveis.</span>\n<span class=\"paragraph\">Sempre que uma sala n\u00e3o corresponde \u00e0 sala necess\u00e1ria para a disciplina, a vari\u00e1vel x correspondente \u00e9 fixada a 0.</span>\n<span class=\"paragraph\">Isto significa que o solver fica proibido de colocar essa disciplina nessa sala, em qualquer dia ou per\u00edodo.</span>\n<span class=\"paragraph\">Por exemplo, se uma disciplina necessitar do Laborat\u00f3rio, todas as outras salas ficam com x = 0 para essa disciplina. Se n\u00e3o necessitar de uma sala especial, apenas a Sala Normal pode ser utilizada.</span>\n<span class=\"paragraph\">Assim, garantimos que cada disciplina \u00e9 colocada numa sala compat\u00edvel com as suas necessidades.</span></span>"
           }
         }
       ],
@@ -313,7 +313,20 @@
     },
     {
       "id": "Pvdt",
-      "code_hash": "c1177bc8a5790e1a083e4fb7bb5ee88d",
+      "code_hash": "4d9453c9fd8b13708b0cf18ecbb8f81e",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h2 id=\"quantidade-de-salas-disponiveis\">Quantidade de salas dispon\u00edveis</h2>\n<span class=\"paragraph\">Nesta parte percorremos todas as salas e obtemos, a partir do ficheiro salas.csv, a quantidade dispon\u00edvel de cada uma.</span>\n<span class=\"paragraph\">De seguida, para cada sala, dia e per\u00edodo, somamos todas as vari\u00e1veis x correspondentes \u00e0s aulas que utilizam essa sala.</span>\n<span class=\"paragraph\">Esta soma representa o n\u00famero de aulas que est\u00e3o a decorrer simultaneamente nessa sala nesse determinado momento.</span>\n<span class=\"paragraph\">Ao impor que essa soma seja menor ou igual \u00e0 quantidade dispon\u00edvel, garantimos que a capacidade de cada tipo de sala n\u00e3o \u00e9 ultrapassada.</span>\n<span class=\"paragraph\">Por exemplo, se Sala Normal tiver uma quantidade de 6, podem decorrer no m\u00e1ximo 6 aulas simultaneamente em salas normais. Se o Laborat\u00f3rio tiver uma quantidade de 1, apenas uma turma pode ter uma aula no laborat\u00f3rio no mesmo per\u00edodo.</span>\n<span class=\"paragraph\">Desta forma, o hor\u00e1rio respeita tanto as salas necess\u00e1rias para cada disciplina como o n\u00famero de salas dispon\u00edveis.</span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "ZBYS",
+      "code_hash": "fdd6cbe80c28b439b750d4af2669aa54",
       "outputs": [
         {
           "type": "data",
@@ -325,8 +338,177 @@
       "console": []
     },
     {
-      "id": "ZBYS",
-      "code_hash": "22c8b19170359de4dfacb8aaab13daf1",
+      "id": "aLJB",
+      "code_hash": "9f00a7e52e21f2b2eaee18ecc4acefbd",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\">Para cada professor, dia da semana e per\u00edodo, \u00e9 criada uma vari\u00e1vel bin\u00e1ria que indica se esse professor tem uma aula nesse determinado momento.</span>\n<span class=\"paragraph\">A vari\u00e1vel pode assumir apenas os valores 0 ou 1:</span>\n<ul>\n<li><code>0</code> significa que o professor n\u00e3o tem nenhuma aula nesse per\u00edodo;</li>\n<li><code>1</code> significa que o professor tem uma aula nesse per\u00edodo.</li>\n</ul>\n<span class=\"paragraph\">Estas vari\u00e1veis permitem representar o hor\u00e1rio de cada professor de forma independente das turmas, disciplinas e salas. Mais \u00e0 frente, s\u00e3o utilizadas para identificar quais s\u00e3o os per\u00edodos ocupados e, consequentemente, quais os per\u00edodos livres que podem representar um \"buraco\" no hor\u00e1rio.</span>\n<span class=\"paragraph\">Como a restri\u00e7\u00e3o R5 j\u00e1 garante que um professor n\u00e3o pode dar duas aulas simultaneamente, cada combina\u00e7\u00e3o de professor, dia e per\u00edodo pode ter no m\u00e1ximo uma aula.</span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "nHfw",
+      "code_hash": "4152039999ed3ade2cc0d1880badd0dc",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "xXTn",
+      "code_hash": "2bfe13a1d5cd320845404b0f691ae949",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\">Nesta parte \u00e9 estabelecida a rela\u00e7\u00e3o entre as vari\u00e1veis prof_aula e as vari\u00e1veis x utilizadas no modelo principal.</span>\n<span class=\"paragraph\">Para cada professor, dia e per\u00edodo, s\u00e3o somadas todas as vari\u00e1veis x correspondentes \u00e0s aulas desse professor. Para isso, s\u00e3o consideradas todas as turmas, todas as disciplinas lecionadas pelo professor e todas as salas poss\u00edveis.</span>\n<span class=\"paragraph\">A soma representa, portanto, se o professor tem uma aula nesse determinado momento.</span>\n<span class=\"paragraph\">A igualdade entre esta soma e prof_aula garante que:</span>\n<ul>\n<li>se o professor n\u00e3o tiver nenhuma aula nesse per\u00edodo, prof_aula ser\u00e1 0;</li>\n<li>se o professor tiver uma aula nesse per\u00edodo, prof_aula ser\u00e1 1.</li>\n</ul>\n<span class=\"paragraph\">A restri\u00e7\u00e3o R5 garante que um professor n\u00e3o pode ter duas aulas simultaneamente. Assim, esta soma s\u00f3 pode assumir os valores 0 ou 1, sendo compat\u00edvel com a vari\u00e1vel bin\u00e1ria prof_aula.</span>\n<span class=\"paragraph\">Desta forma, prof_aula passa a representar diretamente os per\u00edodos ocupados por cada professor e pode ser utilizada na identifica\u00e7\u00e3o dos buracos do hor\u00e1rio.</span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "AjVT",
+      "code_hash": "1d934776b998ec1ba0072fd93917f8ed",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "pHFh",
+      "code_hash": "273251d7c1ea3076df425256b3241f66",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\">Nesta parte s\u00e3o criadas duas vari\u00e1veis auxiliares bin\u00e1rias para cada professor, dia e per\u00edodo: tem_antes e tem_depois.</span>\n<span class=\"paragraph\">A vari\u00e1vel tem_antes indica se existe pelo menos uma aula do professor num per\u00edodo anterior ao per\u00edodo que est\u00e1 a ser analisado.</span>\n<span class=\"paragraph\">A vari\u00e1vel tem_depois indica se existe pelo menos uma aula do professor num per\u00edodo posterior ao per\u00edodo que est\u00e1 a ser analisado.</span>\n<span class=\"paragraph\">Ambas as vari\u00e1veis podem assumir apenas os valores 0 ou 1:</span>\n<ul>\n<li>tem_antes = 0 significa que n\u00e3o existe nenhuma aula anterior;</li>\n<li>tem_antes = 1 significa que existe pelo menos uma aula anterior;</li>\n<li>tem_depois = 0 significa que n\u00e3o existe nenhuma aula posterior;</li>\n<li>tem_depois = 1 significa que existe pelo menos uma aula posterior.</li>\n</ul>\n<span class=\"paragraph\">Estas vari\u00e1veis s\u00e3o necess\u00e1rias para identificar os per\u00edodos que ficam entre duas aulas do mesmo professor. Esses per\u00edodos correspondem aos poss\u00edveis \"buracos\" que queremos minimizar no objetivo O1.Nesta parte s\u00e3o criadas duas vari\u00e1veis auxiliares bin\u00e1rias para cada professor, dia e per\u00edodo: tem_antes e tem_depois.</span>\n<span class=\"paragraph\">A vari\u00e1vel tem_antes indica se existe pelo menos uma aula do professor num per\u00edodo anterior ao per\u00edodo que est\u00e1 a ser analisado.</span>\n<span class=\"paragraph\">A vari\u00e1vel tem_depois indica se existe pelo menos uma aula do professor num per\u00edodo posterior ao per\u00edodo que est\u00e1 a ser analisado.</span>\n<span class=\"paragraph\">Ambas as vari\u00e1veis podem assumir apenas os valores 0 ou 1:</span>\n<ul>\n<li>tem_antes = 0 significa que n\u00e3o existe nenhuma aula anterior;</li>\n<li>tem_antes = 1 significa que existe pelo menos uma aula anterior;</li>\n<li>tem_depois = 0 significa que n\u00e3o existe nenhuma aula posterior;</li>\n<li>tem_depois = 1 significa que existe pelo menos uma aula posterior.</li>\n</ul>\n<span class=\"paragraph\">Estas vari\u00e1veis s\u00e3o necess\u00e1rias para identificar os per\u00edodos que ficam entre duas aulas do mesmo professor. Esses per\u00edodos correspondem aos poss\u00edveis \"buracos\" que queremos minimizar.</span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "NCOB",
+      "code_hash": "cc9075908e117fea845bbca491dc42dc",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "aqbW",
+      "code_hash": "79cdf01458d377034238e5c27a792ba3",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\">Nesta parte s\u00e3o definidas as condi\u00e7\u00f5es das vari\u00e1veis <code>tem_antes</code> e <code>tem_depois</code>, que indicam se existe alguma aula do professor antes ou depois de cada per\u00edodo.</span>\n<span class=\"paragraph\">Para cada professor, dia e per\u00edodo, s\u00e3o analisados os per\u00edodos que est\u00e3o antes e depois do per\u00edodo atual.</span>\n<h3 id=\"tem_antes\"><code>tem_antes</code></h3>\n<span class=\"paragraph\">No primeiro per\u00edodo n\u00e3o existe nenhum per\u00edodo anterior. Por isso, <code>tem_antes</code> \u00e9 obrigatoriamente igual a <code>0</code>.</span>\n<span class=\"paragraph\">Nos restantes per\u00edodos, percorremos todos os per\u00edodos anteriores. Para cada um deles, \u00e9 adicionada uma restri\u00e7\u00e3o que obriga <code>tem_antes</code> a ser <code>1</code> caso exista uma aula do professor nesse per\u00edodo.</span>\n<span class=\"paragraph\">Assim, se o professor tiver pelo menos uma aula antes do per\u00edodo atual, <code>tem_antes</code> ter\u00e1 de assumir o valor <code>1</code>.</span>\n<h3 id=\"tem_depois\"><code>tem_depois</code></h3>\n<span class=\"paragraph\">O funcionamento \u00e9 semelhante, mas para os per\u00edodos seguintes.</span>\n<span class=\"paragraph\">No \u00faltimo per\u00edodo n\u00e3o existe nenhum per\u00edodo posterior, pelo que <code>tem_depois</code> \u00e9 obrigatoriamente igual a <code>0</code>.</span>\n<span class=\"paragraph\">Nos restantes per\u00edodos, percorremos todos os per\u00edodos seguintes. Se existir uma aula do professor em qualquer um desses per\u00edodos, <code>tem_depois</code> ter\u00e1 de assumir o valor <code>1</code>.</span>\n<span class=\"paragraph\">Desta forma, estas duas vari\u00e1veis permitem saber se um determinado per\u00edodo est\u00e1 localizado entre outras aulas do mesmo professor. Esta informa\u00e7\u00e3o ser\u00e1 posteriormente utilizada para identificar os per\u00edodos livres que constituem buracos no hor\u00e1rio.</span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "TRpd",
+      "code_hash": "bf03322c30a99b37553be66aa71b1352",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "TXez",
+      "code_hash": "1184e73ae291321ebf2f3926b5d460b9",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\">Nesta parte s\u00e3o criadas as vari\u00e1veis auxiliares <code>buraco_prof</code>, utilizadas na otimiza\u00e7\u00e3o O1 para identificar os per\u00edodos livres que ficam entre duas aulas de um professor.</span>\n<span class=\"paragraph\">\u00c9 criado um dicion\u00e1rio vazio:</span>\n<div class=\"language-python codehilite\"><pre><span></span><code><span class=\"n\">buraco_prof</span> <span class=\"o\">=</span> <span class=\"p\">{}</span>\n</code></pre></div>\n<span class=\"paragraph\">Depois, s\u00e3o percorridos todos os professores, dias da semana e per\u00edodos:</span>\n<div class=\"language-python codehilite\"><pre><span></span><code><span class=\"k\">for</span> <span class=\"n\">prof0151</span> <span class=\"ow\">in</span> <span class=\"n\">disciplinas</span><span class=\"p\">[</span><span class=\"s2\">\"professor\"</span><span class=\"p\">]</span><span class=\"o\">.</span><span class=\"n\">unique</span><span class=\"p\">():</span>\n    <span class=\"k\">for</span> <span class=\"n\">dia0151</span> <span class=\"ow\">in</span> <span class=\"nb\">range</span><span class=\"p\">(</span><span class=\"n\">D</span><span class=\"p\">):</span>\n        <span class=\"k\">for</span> <span class=\"n\">periodo0151</span> <span class=\"ow\">in</span> <span class=\"nb\">range</span><span class=\"p\">(</span><span class=\"n\">P</span><span class=\"p\">):</span>\n</code></pre></div>\n<span class=\"paragraph\">Para cada combina\u00e7\u00e3o de professor, dia e per\u00edodo, \u00e9 criada uma vari\u00e1vel bin\u00e1ria:</span>\n<div class=\"language-python codehilite\"><pre><span></span><code><span class=\"n\">buraco_prof</span><span class=\"p\">[</span><span class=\"n\">prof0151</span><span class=\"p\">,</span> <span class=\"n\">dia0151</span><span class=\"p\">,</span> <span class=\"n\">periodo0151</span><span class=\"p\">]</span> <span class=\"o\">=</span> <span class=\"n\">horario</span><span class=\"o\">.</span><span class=\"n\">IntVar</span><span class=\"p\">(</span>\n    <span class=\"mi\">0</span><span class=\"p\">,</span> <span class=\"mi\">1</span><span class=\"p\">,</span>\n    <span class=\"sa\">f</span><span class=\"s2\">\"buraco_</span><span class=\"si\">{</span><span class=\"n\">prof0151</span><span class=\"si\">}</span><span class=\"s2\">_</span><span class=\"si\">{</span><span class=\"n\">dia0151</span><span class=\"si\">}</span><span class=\"s2\">_</span><span class=\"si\">{</span><span class=\"n\">periodo0151</span><span class=\"si\">}</span><span class=\"s2\">\"</span>\n<span class=\"p\">)</span>\n</code></pre></div>\n<span class=\"paragraph\">Esta vari\u00e1vel pode assumir apenas dois valores:</span>\n<ul>\n<li><code>0</code> \u2192 o per\u00edodo <strong>n\u00e3o \u00e9 um buraco</strong>;</li>\n<li><code>1</code> \u2192 o per\u00edodo <strong>\u00e9 um buraco</strong>.</li>\n</ul>\n<span class=\"paragraph\">Por exemplo, se o professor tiver aulas nos per\u00edodos 1 e 4 de determinado dia e estiver livre nos per\u00edodos 2 e 3, esses per\u00edodos livres podem ser considerados buracos.</span>\n<span class=\"paragraph\">As vari\u00e1veis <code>buraco_prof</code> n\u00e3o determinam sozinhas se um per\u00edodo \u00e9 realmente um buraco. Essa defini\u00e7\u00e3o \u00e9 feita nas restri\u00e7\u00f5es seguintes, utilizando as vari\u00e1veis <code>tem_antes</code>, <code>tem_depois</code> e <code>prof_aula</code>.</span>\n<span class=\"paragraph\">No final, estas vari\u00e1veis ser\u00e3o utilizadas no objetivo O1 para <strong>minimizar o n\u00famero total de buracos nos hor\u00e1rios dos professores</strong>.</span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "dNNg",
+      "code_hash": "9e3e5229936f54b26bc302816aca659e",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "yCnT",
+      "code_hash": "39d932a1cc17c7552fb566d9a5995580",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\">Nesta parte s\u00e3o definidas as condi\u00e7\u00f5es para que um per\u00edodo seja considerado um <strong>buraco</strong> no hor\u00e1rio de um professor.</span>\n<span class=\"paragraph\">Para um per\u00edodo ser considerado um buraco, t\u00eam de acontecer tr\u00eas coisas:</span>\n<ul>\n<li>o professor tem uma aula antes desse per\u00edodo;</li>\n<li>o professor tem uma aula depois desse per\u00edodo;</li>\n<li>o professor n\u00e3o tem aula nesse per\u00edodo.</li>\n</ul>\n<span class=\"paragraph\">As primeiras tr\u00eas restri\u00e7\u00f5es garantem que um per\u00edodo s\u00f3 pode ser considerado buraco quando estas condi\u00e7\u00f5es s\u00e3o poss\u00edveis.</span>\n<span class=\"paragraph\">A \u00faltima restri\u00e7\u00e3o garante que, quando as tr\u00eas condi\u00e7\u00f5es se verificam, <code>buraco_prof</code> fica obrigatoriamente com o valor <code>1</code>.</span>\n<span class=\"paragraph\">Assim, <code>buraco_prof</code> representa os per\u00edodos livres que ficam entre duas aulas do mesmo professor. Estes valores ser\u00e3o depois utilizados para minimizar o n\u00famero total de buracos no hor\u00e1rio.</span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "wlCL",
+      "code_hash": "c5ebc844e8f91c745aabe8d1cdb7975c",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "kqZH",
+      "code_hash": "caaa94a6e7cdb90ce0b351ccad8762a9",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\">Atrav\u00e9s da conversa com a LLM, depois de explicar o objetivo O1 e as vari\u00e1veis <code>buraco_prof</code>, cheguei \u00e0 conclus\u00e3o de que deveria utilizar a fun\u00e7\u00e3o <code>Minimize()</code> do OR-Tools. Esta fun\u00e7\u00e3o permite indicar ao solver que, entre as solu\u00e7\u00f5es v\u00e1lidas, deve procurar aquela que apresenta o menor valor para uma determinada express\u00e3o.</span>\n<span class=\"paragraph\">Neste caso, como o objetivo \u00e9 minimizar o n\u00famero de buracos, \u00e9 feita a soma de todas as vari\u00e1veis <code>buraco_prof</code>, considerando todos os professores, dias e per\u00edodos. Como cada vari\u00e1vel vale <code>0</code> ou <code>1</code>, esta soma corresponde ao n\u00famero total de buracos.</span>\n<span class=\"paragraph\">Assim, o <code>Minimize()</code> indica ao solver que deve procurar uma solu\u00e7\u00e3o v\u00e1lida que tenha o menor n\u00famero poss\u00edvel de buracos nos hor\u00e1rios dos professores.</span>\n<span class=\"paragraph\">Link da conversa : <a href=\"https://chatgpt.com/share/6ac52d61-c958-83ed-a952-f2e2fced674e\" rel=\"noopener noreferrer\" target=\"_blank\">https://chatgpt.com/share/6ac52d61-c958-83ed-a952-f2e2fced674e</a></span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "wAgl",
+      "code_hash": "8119f0e26d6cd4d122573cd7fc349497",
       "outputs": [
         {
           "type": "data",
@@ -339,13 +521,13 @@
         {
           "type": "stream",
           "name": "stdout",
-          "text": "Status: 0\n",
+          "text": "Status: 0\nTempo H0: 2.245145797729492\n",
           "mimetype": "text/plain"
         }
       ]
     },
     {
-      "id": "aLJB",
+      "id": "rEll",
       "code_hash": "65a3bab68d5bedb036d19648d4257533",
       "outputs": [
         {
@@ -359,19 +541,255 @@
         {
           "type": "stream",
           "name": "stdout",
-          "text": "Vari\u00e1veis: 1080\nRestri\u00e7\u00f5es: 1592\n",
+          "text": "Vari\u00e1veis: 1680\nRestri\u00e7\u00f5es: 3142\n",
           "mimetype": "text/plain"
         }
       ]
     },
     {
-      "id": "vyKB",
+      "id": "dGlV",
       "code_hash": "6b6fa780e237bf6e22f141881b5aa911",
       "outputs": [
         {
           "type": "data",
           "data": {
-            "text/html": "<div style='display: flex;flex: 1;flex-direction: column;justify-content: flex-start;align-items: normal;flex-wrap: nowrap;gap: 0.5rem'><div style='display: flex;flex: 1;flex-direction: column;justify-content: flex-start;align-items: normal;flex-wrap: nowrap;gap: 0.5rem'><span class=\"markdown prose dark:prose-invert contents\"><h2 id=\"turma-7oa\">Turma 7\u00baA</h2></span><marimo-ui-element object-id='vyKB-0' random-id='d95cf17d-13c8-b46a-da59-1313f1a91041'><marimo-table data-initial-value='[]' data-label='null' data-data='&quot;[{&#92;&quot;_marimo_row_id&#92;&quot;:0,&#92;&quot;Per&#92;&#92;u00edodo&#92;&quot;:1,&#92;&quot;Seg&#92;&quot;:&#92;&quot;Portugu&#92;&#92;u00eas (Sala Normal)&#92;&quot;,&#92;&quot;Ter&#92;&quot;:&#92;&quot;Ci&#92;&#92;u00eancias (Laborat&#92;&#92;u00f3rio)&#92;&quot;,&#92;&quot;Qua&#92;&quot;:&#92;&quot;Hist&#92;&#92;u00f3ria (Sala Normal)&#92;&quot;,&#92;&quot;Qui&#92;&quot;:&#92;&quot;Ci&#92;&#92;u00eancias (Laborat&#92;&#92;u00f3rio)&#92;&quot;,&#92;&quot;Sex&#92;&quot;:&#92;&quot;Portugu&#92;&#92;u00eas (Sala Normal)&#92;&quot;},{&#92;&quot;_marimo_row_id&#92;&quot;:1,&#92;&quot;Per&#92;&#92;u00edodo&#92;&quot;:2,&#92;&quot;Seg&#92;&quot;:&#92;&quot;Ci&#92;&#92;u00eancias (Laborat&#92;&#92;u00f3rio)&#92;&quot;,&#92;&quot;Ter&#92;&quot;:&#92;&quot;Portugu&#92;&#92;u00eas (Sala Normal)&#92;&quot;,&#92;&quot;Qua&#92;&quot;:&#92;&quot;Portugu&#92;&#92;u00eas (Sala Normal)&#92;&quot;,&#92;&quot;Qui&#92;&quot;:&#92;&quot;Ingl&#92;&#92;u00eas (Sala Normal)&#92;&quot;,&#92;&quot;Sex&#92;&quot;:&#92;&quot;Hist&#92;&#92;u00f3ria (Sala Normal)&#92;&quot;},{&#92;&quot;_marimo_row_id&#92;&quot;:2,&#92;&quot;Per&#92;&#92;u00edodo&#92;&quot;:3,&#92;&quot;Seg&#92;&quot;:&#92;&quot;&#92;&quot;,&#92;&quot;Ter&#92;&quot;:&#92;&quot;Ingl&#92;&#92;u00eas (Sala Normal)&#92;&quot;,&#92;&quot;Qua&#92;&quot;:&#92;&quot;&#92;&quot;,&#92;&quot;Qui&#92;&quot;:&#92;&quot;&#92;&quot;,&#92;&quot;Sex&#92;&quot;:&#92;&quot;&#92;&quot;},{&#92;&quot;_marimo_row_id&#92;&quot;:3,&#92;&quot;Per&#92;&#92;u00edodo&#92;&quot;:4,&#92;&quot;Seg&#92;&quot;:&#92;&quot;&#92;&quot;,&#92;&quot;Ter&#92;&quot;:&#92;&quot;Educa&#92;&#92;u00e7&#92;&#92;u00e3o F&#92;&#92;u00edsica (Gin&#92;&#92;u00e1sio)&#92;&quot;,&#92;&quot;Qua&#92;&quot;:&#92;&quot;&#92;&quot;,&#92;&quot;Qui&#92;&quot;:&#92;&quot;&#92;&quot;,&#92;&quot;Sex&#92;&quot;:&#92;&quot;&#92;&quot;},{&#92;&quot;_marimo_row_id&#92;&quot;:4,&#92;&quot;Per&#92;&#92;u00edodo&#92;&quot;:5,&#92;&quot;Seg&#92;&quot;:&#92;&quot;&#92;&quot;,&#92;&quot;Ter&#92;&quot;:&#92;&quot;Educa&#92;&#92;u00e7&#92;&#92;u00e3o F&#92;&#92;u00edsica (Gin&#92;&#92;u00e1sio)&#92;&quot;,&#92;&quot;Qua&#92;&quot;:&#92;&quot;&#92;&quot;,&#92;&quot;Qui&#92;&quot;:&#92;&quot;&#92;&quot;,&#92;&quot;Sex&#92;&quot;:&#92;&quot;&#92;&quot;},{&#92;&quot;_marimo_row_id&#92;&quot;:5,&#92;&quot;Per&#92;&#92;u00edodo&#92;&quot;:6,&#92;&quot;Seg&#92;&quot;:&#92;&quot;&#92;&quot;,&#92;&quot;Ter&#92;&quot;:&#92;&quot;&#92;&quot;,&#92;&quot;Qua&#92;&quot;:&#92;&quot;&#92;&quot;,&#92;&quot;Qui&#92;&quot;:&#92;&quot;&#92;&quot;,&#92;&quot;Sex&#92;&quot;:&#92;&quot;&#92;&quot;}]&quot;' data-total-rows='6' data-total-columns='6' data-max-columns='50' data-banner-text='&quot;&quot;' data-pagination='false' data-page-size='10' data-field-types='[[&quot;Per\u00edodo&quot;,[&quot;integer&quot;,&quot;int64&quot;]],[&quot;Seg&quot;,[&quot;string&quot;,&quot;str&quot;]],[&quot;Ter&quot;,[&quot;string&quot;,&quot;str&quot;]],[&quot;Qua&quot;,[&quot;string&quot;,&quot;str&quot;]],[&quot;Qui&quot;,[&quot;string&quot;,&quot;str&quot;]],[&quot;Sex&quot;,[&quot;string&quot;,&quot;str&quot;]]]' data-selection='&quot;multi&quot;' data-show-filters='true' data-show-download='true' data-show-search='true' data-show-column-summaries='false' data-show-data-types='true' data-show-page-size-selector='true' data-show-column-explorer='true' data-show-chart-builder='true' data-row-headers='[]' data-hidden-columns='[]' data-has-stable-row-id='true' data-lazy='false' data-preload='false'></marimo-table></marimo-ui-element></div><div style='display: flex;flex: 1;flex-direction: column;justify-content: flex-start;align-items: normal;flex-wrap: nowrap;gap: 0.5rem'><span class=\"markdown prose dark:prose-invert contents\"><h2 id=\"turma-7ob\">Turma 7\u00baB</h2></span><marimo-ui-element object-id='vyKB-1' random-id='2aa0f154-0c45-17e6-5e90-8261e47eb9f3'><marimo-table data-initial-value='[]' data-label='null' data-data='&quot;[{&#92;&quot;_marimo_row_id&#92;&quot;:0,&#92;&quot;Per&#92;&#92;u00edodo&#92;&quot;:1,&#92;&quot;Seg&#92;&quot;:&#92;&quot;Hist&#92;&#92;u00f3ria (Sala Normal)&#92;&quot;,&#92;&quot;Ter&#92;&quot;:&#92;&quot;Portugu&#92;&#92;u00eas (Sala Normal)&#92;&quot;,&#92;&quot;Qua&#92;&quot;:&#92;&quot;Ci&#92;&#92;u00eancias (Laborat&#92;&#92;u00f3rio)&#92;&quot;,&#92;&quot;Qui&#92;&quot;:&#92;&quot;Hist&#92;&#92;u00f3ria (Sala Normal)&#92;&quot;,&#92;&quot;Sex&#92;&quot;:&#92;&quot;Ci&#92;&#92;u00eancias (Laborat&#92;&#92;u00f3rio)&#92;&quot;},{&#92;&quot;_marimo_row_id&#92;&quot;:1,&#92;&quot;Per&#92;&#92;u00edodo&#92;&quot;:2,&#92;&quot;Seg&#92;&quot;:&#92;&quot;Portugu&#92;&#92;u00eas (Sala Normal)&#92;&quot;,&#92;&quot;Ter&#92;&quot;:&#92;&quot;Ci&#92;&#92;u00eancias (Laborat&#92;&#92;u00f3rio)&#92;&quot;,&#92;&quot;Qua&#92;&quot;:&#92;&quot;Ingl&#92;&#92;u00eas (Sala Normal)&#92;&quot;,&#92;&quot;Qui&#92;&quot;:&#92;&quot;Portugu&#92;&#92;u00eas (Sala Normal)&#92;&quot;,&#92;&quot;Sex&#92;&quot;:&#92;&quot;Portugu&#92;&#92;u00eas (Sala Normal)&#92;&quot;},{&#92;&quot;_marimo_row_id&#92;&quot;:2,&#92;&quot;Per&#92;&#92;u00edodo&#92;&quot;:3,&#92;&quot;Seg&#92;&quot;:&#92;&quot;Ingl&#92;&#92;u00eas (Sala Normal)&#92;&quot;,&#92;&quot;Ter&#92;&quot;:&#92;&quot;&#92;&quot;,&#92;&quot;Qua&#92;&quot;:&#92;&quot;&#92;&quot;,&#92;&quot;Qui&#92;&quot;:&#92;&quot;&#92;&quot;,&#92;&quot;Sex&#92;&quot;:&#92;&quot;&#92;&quot;},{&#92;&quot;_marimo_row_id&#92;&quot;:3,&#92;&quot;Per&#92;&#92;u00edodo&#92;&quot;:4,&#92;&quot;Seg&#92;&quot;:&#92;&quot;&#92;&quot;,&#92;&quot;Ter&#92;&quot;:&#92;&quot;&#92;&quot;,&#92;&quot;Qua&#92;&quot;:&#92;&quot;&#92;&quot;,&#92;&quot;Qui&#92;&quot;:&#92;&quot;&#92;&quot;,&#92;&quot;Sex&#92;&quot;:&#92;&quot;Educa&#92;&#92;u00e7&#92;&#92;u00e3o F&#92;&#92;u00edsica (Gin&#92;&#92;u00e1sio)&#92;&quot;},{&#92;&quot;_marimo_row_id&#92;&quot;:4,&#92;&quot;Per&#92;&#92;u00edodo&#92;&quot;:5,&#92;&quot;Seg&#92;&quot;:&#92;&quot;&#92;&quot;,&#92;&quot;Ter&#92;&quot;:&#92;&quot;&#92;&quot;,&#92;&quot;Qua&#92;&quot;:&#92;&quot;&#92;&quot;,&#92;&quot;Qui&#92;&quot;:&#92;&quot;&#92;&quot;,&#92;&quot;Sex&#92;&quot;:&#92;&quot;Educa&#92;&#92;u00e7&#92;&#92;u00e3o F&#92;&#92;u00edsica (Gin&#92;&#92;u00e1sio)&#92;&quot;},{&#92;&quot;_marimo_row_id&#92;&quot;:5,&#92;&quot;Per&#92;&#92;u00edodo&#92;&quot;:6,&#92;&quot;Seg&#92;&quot;:&#92;&quot;&#92;&quot;,&#92;&quot;Ter&#92;&quot;:&#92;&quot;&#92;&quot;,&#92;&quot;Qua&#92;&quot;:&#92;&quot;&#92;&quot;,&#92;&quot;Qui&#92;&quot;:&#92;&quot;&#92;&quot;,&#92;&quot;Sex&#92;&quot;:&#92;&quot;&#92;&quot;}]&quot;' data-total-rows='6' data-total-columns='6' data-max-columns='50' data-banner-text='&quot;&quot;' data-pagination='false' data-page-size='10' data-field-types='[[&quot;Per\u00edodo&quot;,[&quot;integer&quot;,&quot;int64&quot;]],[&quot;Seg&quot;,[&quot;string&quot;,&quot;str&quot;]],[&quot;Ter&quot;,[&quot;string&quot;,&quot;str&quot;]],[&quot;Qua&quot;,[&quot;string&quot;,&quot;str&quot;]],[&quot;Qui&quot;,[&quot;string&quot;,&quot;str&quot;]],[&quot;Sex&quot;,[&quot;string&quot;,&quot;str&quot;]]]' data-selection='&quot;multi&quot;' data-show-filters='true' data-show-download='true' data-show-search='true' data-show-column-summaries='false' data-show-data-types='true' data-show-page-size-selector='true' data-show-column-explorer='true' data-show-chart-builder='true' data-row-headers='[]' data-hidden-columns='[]' data-has-stable-row-id='true' data-lazy='false' data-preload='false'></marimo-table></marimo-ui-element></div></div>"
+            "text/html": "<div style='display: flex;flex: 1;flex-direction: column;justify-content: flex-start;align-items: normal;flex-wrap: nowrap;gap: 0.5rem'><div style='display: flex;flex: 1;flex-direction: column;justify-content: flex-start;align-items: normal;flex-wrap: nowrap;gap: 0.5rem'><span class=\"markdown prose dark:prose-invert contents\"><h2 id=\"turma-7oa\">Turma 7\u00baA</h2></span><marimo-ui-element object-id='dGlV-0' random-id='138f8ca3-db4c-c4c0-0d6f-0ce7f09271fd'><marimo-table data-initial-value='[]' data-label='null' data-data='&quot;[{&#92;&quot;_marimo_row_id&#92;&quot;:0,&#92;&quot;Per&#92;&#92;u00edodo&#92;&quot;:1,&#92;&quot;Seg&#92;&quot;:&#92;&quot;Matem&#92;&#92;u00e1tica (Sala Normal)&#92;&quot;,&#92;&quot;Ter&#92;&quot;:&#92;&quot;Ci&#92;&#92;u00eancias (Laborat&#92;&#92;u00f3rio)&#92;&quot;,&#92;&quot;Qua&#92;&quot;:&#92;&quot;Portugu&#92;&#92;u00eas (Sala Normal)&#92;&quot;,&#92;&quot;Qui&#92;&quot;:&#92;&quot;Portugu&#92;&#92;u00eas (Sala Normal)&#92;&quot;,&#92;&quot;Sex&#92;&quot;:&#92;&quot;&#92;&quot;},{&#92;&quot;_marimo_row_id&#92;&quot;:1,&#92;&quot;Per&#92;&#92;u00edodo&#92;&quot;:2,&#92;&quot;Seg&#92;&quot;:&#92;&quot;Hist&#92;&#92;u00f3ria (Sala Normal)&#92;&quot;,&#92;&quot;Ter&#92;&quot;:&#92;&quot;&#92;&quot;,&#92;&quot;Qua&#92;&quot;:&#92;&quot;Ci&#92;&#92;u00eancias (Laborat&#92;&#92;u00f3rio)&#92;&quot;,&#92;&quot;Qui&#92;&quot;:&#92;&quot;&#92;&quot;,&#92;&quot;Sex&#92;&quot;:&#92;&quot;Portugu&#92;&#92;u00eas (Sala Normal)&#92;&quot;},{&#92;&quot;_marimo_row_id&#92;&quot;:2,&#92;&quot;Per&#92;&#92;u00edodo&#92;&quot;:3,&#92;&quot;Seg&#92;&quot;:&#92;&quot;Portugu&#92;&#92;u00eas (Sala Normal)&#92;&quot;,&#92;&quot;Ter&#92;&quot;:&#92;&quot;&#92;&quot;,&#92;&quot;Qua&#92;&quot;:&#92;&quot;Matem&#92;&#92;u00e1tica (Sala Normal)&#92;&quot;,&#92;&quot;Qui&#92;&quot;:&#92;&quot;&#92;&quot;,&#92;&quot;Sex&#92;&quot;:&#92;&quot;Hist&#92;&#92;u00f3ria (Sala Normal)&#92;&quot;},{&#92;&quot;_marimo_row_id&#92;&quot;:3,&#92;&quot;Per&#92;&#92;u00edodo&#92;&quot;:4,&#92;&quot;Seg&#92;&quot;:&#92;&quot;Ingl&#92;&#92;u00eas (Sala Normal)&#92;&quot;,&#92;&quot;Ter&#92;&quot;:&#92;&quot;Educa&#92;&#92;u00e7&#92;&#92;u00e3o F&#92;&#92;u00edsica (Gin&#92;&#92;u00e1sio)&#92;&quot;,&#92;&quot;Qua&#92;&quot;:&#92;&quot;&#92;&quot;,&#92;&quot;Qui&#92;&quot;:&#92;&quot;Matem&#92;&#92;u00e1tica (Sala Normal)&#92;&quot;,&#92;&quot;Sex&#92;&quot;:&#92;&quot;Ingl&#92;&#92;u00eas (Sala Normal)&#92;&quot;},{&#92;&quot;_marimo_row_id&#92;&quot;:4,&#92;&quot;Per&#92;&#92;u00edodo&#92;&quot;:5,&#92;&quot;Seg&#92;&quot;:&#92;&quot;Ci&#92;&#92;u00eancias (Laborat&#92;&#92;u00f3rio)&#92;&quot;,&#92;&quot;Ter&#92;&quot;:&#92;&quot;Educa&#92;&#92;u00e7&#92;&#92;u00e3o F&#92;&#92;u00edsica (Gin&#92;&#92;u00e1sio)&#92;&quot;,&#92;&quot;Qua&#92;&quot;:&#92;&quot;&#92;&quot;,&#92;&quot;Qui&#92;&quot;:&#92;&quot;&#92;&quot;,&#92;&quot;Sex&#92;&quot;:&#92;&quot;&#92;&quot;},{&#92;&quot;_marimo_row_id&#92;&quot;:5,&#92;&quot;Per&#92;&#92;u00edodo&#92;&quot;:6,&#92;&quot;Seg&#92;&quot;:&#92;&quot;&#92;&quot;,&#92;&quot;Ter&#92;&quot;:&#92;&quot;&#92;&quot;,&#92;&quot;Qua&#92;&quot;:&#92;&quot;&#92;&quot;,&#92;&quot;Qui&#92;&quot;:&#92;&quot;&#92;&quot;,&#92;&quot;Sex&#92;&quot;:&#92;&quot;Matem&#92;&#92;u00e1tica (Sala Normal)&#92;&quot;}]&quot;' data-total-rows='6' data-total-columns='6' data-max-columns='50' data-banner-text='&quot;&quot;' data-pagination='false' data-page-size='10' data-field-types='[[&quot;Per\u00edodo&quot;,[&quot;integer&quot;,&quot;int64&quot;]],[&quot;Seg&quot;,[&quot;string&quot;,&quot;str&quot;]],[&quot;Ter&quot;,[&quot;string&quot;,&quot;str&quot;]],[&quot;Qua&quot;,[&quot;string&quot;,&quot;str&quot;]],[&quot;Qui&quot;,[&quot;string&quot;,&quot;str&quot;]],[&quot;Sex&quot;,[&quot;string&quot;,&quot;str&quot;]]]' data-selection='&quot;multi&quot;' data-show-filters='true' data-show-download='true' data-show-search='true' data-show-column-summaries='false' data-show-data-types='true' data-show-page-size-selector='true' data-show-column-explorer='true' data-show-chart-builder='true' data-row-headers='[]' data-hidden-columns='[]' data-has-stable-row-id='true' data-lazy='false' data-preload='false'></marimo-table></marimo-ui-element></div><div style='display: flex;flex: 1;flex-direction: column;justify-content: flex-start;align-items: normal;flex-wrap: nowrap;gap: 0.5rem'><span class=\"markdown prose dark:prose-invert contents\"><h2 id=\"turma-7ob\">Turma 7\u00baB</h2></span><marimo-ui-element object-id='dGlV-1' random-id='6a65146c-4859-f8ff-74ee-0af7831035bf'><marimo-table data-initial-value='[]' data-label='null' data-data='&quot;[{&#92;&quot;_marimo_row_id&#92;&quot;:0,&#92;&quot;Per&#92;&#92;u00edodo&#92;&quot;:1,&#92;&quot;Seg&#92;&quot;:&#92;&quot;Hist&#92;&#92;u00f3ria (Sala Normal)&#92;&quot;,&#92;&quot;Ter&#92;&quot;:&#92;&quot;Ingl&#92;&#92;u00eas (Sala Normal)&#92;&quot;,&#92;&quot;Qua&#92;&quot;:&#92;&quot;Ci&#92;&#92;u00eancias (Laborat&#92;&#92;u00f3rio)&#92;&quot;,&#92;&quot;Qui&#92;&quot;:&#92;&quot;&#92;&quot;,&#92;&quot;Sex&#92;&quot;:&#92;&quot;Portugu&#92;&#92;u00eas (Sala Normal)&#92;&quot;},{&#92;&quot;_marimo_row_id&#92;&quot;:1,&#92;&quot;Per&#92;&#92;u00edodo&#92;&quot;:2,&#92;&quot;Seg&#92;&quot;:&#92;&quot;Matem&#92;&#92;u00e1tica (Sala Normal)&#92;&quot;,&#92;&quot;Ter&#92;&quot;:&#92;&quot;Hist&#92;&#92;u00f3ria (Sala Normal)&#92;&quot;,&#92;&quot;Qua&#92;&quot;:&#92;&quot;Matem&#92;&#92;u00e1tica (Sala Normal)&#92;&quot;,&#92;&quot;Qui&#92;&quot;:&#92;&quot;Portugu&#92;&#92;u00eas (Sala Normal)&#92;&quot;,&#92;&quot;Sex&#92;&quot;:&#92;&quot;&#92;&quot;},{&#92;&quot;_marimo_row_id&#92;&quot;:2,&#92;&quot;Per&#92;&#92;u00edodo&#92;&quot;:3,&#92;&quot;Seg&#92;&quot;:&#92;&quot;Ingl&#92;&#92;u00eas (Sala Normal)&#92;&quot;,&#92;&quot;Ter&#92;&quot;:&#92;&quot;Matem&#92;&#92;u00e1tica (Sala Normal)&#92;&quot;,&#92;&quot;Qua&#92;&quot;:&#92;&quot;&#92;&quot;,&#92;&quot;Qui&#92;&quot;:&#92;&quot;&#92;&quot;,&#92;&quot;Sex&#92;&quot;:&#92;&quot;Ci&#92;&#92;u00eancias (Laborat&#92;&#92;u00f3rio)&#92;&quot;},{&#92;&quot;_marimo_row_id&#92;&quot;:3,&#92;&quot;Per&#92;&#92;u00edodo&#92;&quot;:4,&#92;&quot;Seg&#92;&quot;:&#92;&quot;Portugu&#92;&#92;u00eas (Sala Normal)&#92;&quot;,&#92;&quot;Ter&#92;&quot;:&#92;&quot;Portugu&#92;&#92;u00eas (Sala Normal)&#92;&quot;,&#92;&quot;Qua&#92;&quot;:&#92;&quot;&#92;&quot;,&#92;&quot;Qui&#92;&quot;:&#92;&quot;Ci&#92;&#92;u00eancias (Laborat&#92;&#92;u00f3rio)&#92;&quot;,&#92;&quot;Sex&#92;&quot;:&#92;&quot;&#92;&quot;},{&#92;&quot;_marimo_row_id&#92;&quot;:4,&#92;&quot;Per&#92;&#92;u00edodo&#92;&quot;:5,&#92;&quot;Seg&#92;&quot;:&#92;&quot;Educa&#92;&#92;u00e7&#92;&#92;u00e3o F&#92;&#92;u00edsica (Gin&#92;&#92;u00e1sio)&#92;&quot;,&#92;&quot;Ter&#92;&quot;:&#92;&quot;&#92;&quot;,&#92;&quot;Qua&#92;&quot;:&#92;&quot;&#92;&quot;,&#92;&quot;Qui&#92;&quot;:&#92;&quot;Matem&#92;&#92;u00e1tica (Sala Normal)&#92;&quot;,&#92;&quot;Sex&#92;&quot;:&#92;&quot;&#92;&quot;},{&#92;&quot;_marimo_row_id&#92;&quot;:5,&#92;&quot;Per&#92;&#92;u00edodo&#92;&quot;:6,&#92;&quot;Seg&#92;&quot;:&#92;&quot;Educa&#92;&#92;u00e7&#92;&#92;u00e3o F&#92;&#92;u00edsica (Gin&#92;&#92;u00e1sio)&#92;&quot;,&#92;&quot;Ter&#92;&quot;:&#92;&quot;&#92;&quot;,&#92;&quot;Qua&#92;&quot;:&#92;&quot;&#92;&quot;,&#92;&quot;Qui&#92;&quot;:&#92;&quot;&#92;&quot;,&#92;&quot;Sex&#92;&quot;:&#92;&quot;&#92;&quot;}]&quot;' data-total-rows='6' data-total-columns='6' data-max-columns='50' data-banner-text='&quot;&quot;' data-pagination='false' data-page-size='10' data-field-types='[[&quot;Per\u00edodo&quot;,[&quot;integer&quot;,&quot;int64&quot;]],[&quot;Seg&quot;,[&quot;string&quot;,&quot;str&quot;]],[&quot;Ter&quot;,[&quot;string&quot;,&quot;str&quot;]],[&quot;Qua&quot;,[&quot;string&quot;,&quot;str&quot;]],[&quot;Qui&quot;,[&quot;string&quot;,&quot;str&quot;]],[&quot;Sex&quot;,[&quot;string&quot;,&quot;str&quot;]]]' data-selection='&quot;multi&quot;' data-show-filters='true' data-show-download='true' data-show-search='true' data-show-column-summaries='false' data-show-data-types='true' data-show-page-size-selector='true' data-show-column-explorer='true' data-show-chart-builder='true' data-row-headers='[]' data-hidden-columns='[]' data-has-stable-row-id='true' data-lazy='false' data-preload='false'></marimo-table></marimo-ui-element></div></div>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "SdmI",
+      "code_hash": "c64912af70991f192f7ab988beca5fc0",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<div style='display: flex;flex: 1;flex-direction: column;justify-content: flex-start;align-items: normal;flex-wrap: nowrap;gap: 0.5rem'><div style='display: flex;flex: 1;flex-direction: column;justify-content: flex-start;align-items: normal;flex-wrap: nowrap;gap: 0.5rem'><span class=\"markdown prose dark:prose-invert contents\"><h3 id=\"prof-ana\">Prof. Ana</h3></span><marimo-ui-element object-id='SdmI-0' random-id='76a54670-b594-8a81-000e-370ad04dbcb4'><marimo-table data-initial-value='[]' data-label='null' data-data='&quot;[{&#92;&quot;_marimo_row_id&#92;&quot;:0,&#92;&quot;Per&#92;&#92;u00edodo&#92;&quot;:1,&#92;&quot;Seg&#92;&quot;:&#92;&quot;Matem&#92;&#92;u00e1tica - 7&#92;&#92;u00baA (Sala Normal)&#92;&quot;,&#92;&quot;Ter&#92;&quot;:&#92;&quot;&#92;&quot;,&#92;&quot;Qua&#92;&quot;:&#92;&quot;&#92;&quot;,&#92;&quot;Qui&#92;&quot;:&#92;&quot;&#92;&quot;,&#92;&quot;Sex&#92;&quot;:&#92;&quot;&#92;&quot;},{&#92;&quot;_marimo_row_id&#92;&quot;:1,&#92;&quot;Per&#92;&#92;u00edodo&#92;&quot;:2,&#92;&quot;Seg&#92;&quot;:&#92;&quot;Matem&#92;&#92;u00e1tica - 7&#92;&#92;u00baB (Sala Normal)&#92;&quot;,&#92;&quot;Ter&#92;&quot;:&#92;&quot;&#92;&quot;,&#92;&quot;Qua&#92;&quot;:&#92;&quot;Matem&#92;&#92;u00e1tica - 7&#92;&#92;u00baB (Sala Normal)&#92;&quot;,&#92;&quot;Qui&#92;&quot;:&#92;&quot;&#92;&quot;,&#92;&quot;Sex&#92;&quot;:&#92;&quot;&#92;&quot;},{&#92;&quot;_marimo_row_id&#92;&quot;:2,&#92;&quot;Per&#92;&#92;u00edodo&#92;&quot;:3,&#92;&quot;Seg&#92;&quot;:&#92;&quot;&#92;&quot;,&#92;&quot;Ter&#92;&quot;:&#92;&quot;Matem&#92;&#92;u00e1tica - 7&#92;&#92;u00baB (Sala Normal)&#92;&quot;,&#92;&quot;Qua&#92;&quot;:&#92;&quot;Matem&#92;&#92;u00e1tica - 7&#92;&#92;u00baA (Sala Normal)&#92;&quot;,&#92;&quot;Qui&#92;&quot;:&#92;&quot;&#92;&quot;,&#92;&quot;Sex&#92;&quot;:&#92;&quot;&#92;&quot;},{&#92;&quot;_marimo_row_id&#92;&quot;:3,&#92;&quot;Per&#92;&#92;u00edodo&#92;&quot;:4,&#92;&quot;Seg&#92;&quot;:&#92;&quot;&#92;&quot;,&#92;&quot;Ter&#92;&quot;:&#92;&quot;&#92;&quot;,&#92;&quot;Qua&#92;&quot;:&#92;&quot;&#92;&quot;,&#92;&quot;Qui&#92;&quot;:&#92;&quot;Matem&#92;&#92;u00e1tica - 7&#92;&#92;u00baA (Sala Normal)&#92;&quot;,&#92;&quot;Sex&#92;&quot;:&#92;&quot;&#92;&quot;},{&#92;&quot;_marimo_row_id&#92;&quot;:4,&#92;&quot;Per&#92;&#92;u00edodo&#92;&quot;:5,&#92;&quot;Seg&#92;&quot;:&#92;&quot;&#92;&quot;,&#92;&quot;Ter&#92;&quot;:&#92;&quot;&#92;&quot;,&#92;&quot;Qua&#92;&quot;:&#92;&quot;&#92;&quot;,&#92;&quot;Qui&#92;&quot;:&#92;&quot;Matem&#92;&#92;u00e1tica - 7&#92;&#92;u00baB (Sala Normal)&#92;&quot;,&#92;&quot;Sex&#92;&quot;:&#92;&quot;&#92;&quot;},{&#92;&quot;_marimo_row_id&#92;&quot;:5,&#92;&quot;Per&#92;&#92;u00edodo&#92;&quot;:6,&#92;&quot;Seg&#92;&quot;:&#92;&quot;&#92;&quot;,&#92;&quot;Ter&#92;&quot;:&#92;&quot;&#92;&quot;,&#92;&quot;Qua&#92;&quot;:&#92;&quot;&#92;&quot;,&#92;&quot;Qui&#92;&quot;:&#92;&quot;&#92;&quot;,&#92;&quot;Sex&#92;&quot;:&#92;&quot;Matem&#92;&#92;u00e1tica - 7&#92;&#92;u00baA (Sala Normal)&#92;&quot;}]&quot;' data-total-rows='6' data-total-columns='6' data-max-columns='50' data-banner-text='&quot;&quot;' data-pagination='false' data-page-size='10' data-field-types='[[&quot;Per\u00edodo&quot;,[&quot;integer&quot;,&quot;int64&quot;]],[&quot;Seg&quot;,[&quot;string&quot;,&quot;str&quot;]],[&quot;Ter&quot;,[&quot;string&quot;,&quot;str&quot;]],[&quot;Qua&quot;,[&quot;string&quot;,&quot;str&quot;]],[&quot;Qui&quot;,[&quot;string&quot;,&quot;str&quot;]],[&quot;Sex&quot;,[&quot;string&quot;,&quot;str&quot;]]]' data-selection='&quot;multi&quot;' data-show-filters='true' data-show-download='true' data-show-search='true' data-show-column-summaries='false' data-show-data-types='true' data-show-page-size-selector='true' data-show-column-explorer='true' data-show-chart-builder='true' data-row-headers='[]' data-hidden-columns='[]' data-has-stable-row-id='true' data-lazy='false' data-preload='false'></marimo-table></marimo-ui-element></div><div style='display: flex;flex: 1;flex-direction: column;justify-content: flex-start;align-items: normal;flex-wrap: nowrap;gap: 0.5rem'><span class=\"markdown prose dark:prose-invert contents\"><h3 id=\"prof-bruno\">Prof. Bruno</h3></span><marimo-ui-element object-id='SdmI-1' random-id='6b5450d9-86b4-8cf0-7faa-13aec6fa7c3e'><marimo-table data-initial-value='[]' data-label='null' data-data='&quot;[{&#92;&quot;_marimo_row_id&#92;&quot;:0,&#92;&quot;Per&#92;&#92;u00edodo&#92;&quot;:1,&#92;&quot;Seg&#92;&quot;:&#92;&quot;&#92;&quot;,&#92;&quot;Ter&#92;&quot;:&#92;&quot;&#92;&quot;,&#92;&quot;Qua&#92;&quot;:&#92;&quot;Portugu&#92;&#92;u00eas - 7&#92;&#92;u00baA (Sala Normal)&#92;&quot;,&#92;&quot;Qui&#92;&quot;:&#92;&quot;Portugu&#92;&#92;u00eas - 7&#92;&#92;u00baA (Sala Normal)&#92;&quot;,&#92;&quot;Sex&#92;&quot;:&#92;&quot;Portugu&#92;&#92;u00eas - 7&#92;&#92;u00baB (Sala Normal)&#92;&quot;},{&#92;&quot;_marimo_row_id&#92;&quot;:1,&#92;&quot;Per&#92;&#92;u00edodo&#92;&quot;:2,&#92;&quot;Seg&#92;&quot;:&#92;&quot;&#92;&quot;,&#92;&quot;Ter&#92;&quot;:&#92;&quot;&#92;&quot;,&#92;&quot;Qua&#92;&quot;:&#92;&quot;&#92;&quot;,&#92;&quot;Qui&#92;&quot;:&#92;&quot;Portugu&#92;&#92;u00eas - 7&#92;&#92;u00baB (Sala Normal)&#92;&quot;,&#92;&quot;Sex&#92;&quot;:&#92;&quot;Portugu&#92;&#92;u00eas - 7&#92;&#92;u00baA (Sala Normal)&#92;&quot;},{&#92;&quot;_marimo_row_id&#92;&quot;:2,&#92;&quot;Per&#92;&#92;u00edodo&#92;&quot;:3,&#92;&quot;Seg&#92;&quot;:&#92;&quot;Portugu&#92;&#92;u00eas - 7&#92;&#92;u00baA (Sala Normal)&#92;&quot;,&#92;&quot;Ter&#92;&quot;:&#92;&quot;&#92;&quot;,&#92;&quot;Qua&#92;&quot;:&#92;&quot;&#92;&quot;,&#92;&quot;Qui&#92;&quot;:&#92;&quot;&#92;&quot;,&#92;&quot;Sex&#92;&quot;:&#92;&quot;&#92;&quot;},{&#92;&quot;_marimo_row_id&#92;&quot;:3,&#92;&quot;Per&#92;&#92;u00edodo&#92;&quot;:4,&#92;&quot;Seg&#92;&quot;:&#92;&quot;Portugu&#92;&#92;u00eas - 7&#92;&#92;u00baB (Sala Normal)&#92;&quot;,&#92;&quot;Ter&#92;&quot;:&#92;&quot;Portugu&#92;&#92;u00eas - 7&#92;&#92;u00baB (Sala Normal)&#92;&quot;,&#92;&quot;Qua&#92;&quot;:&#92;&quot;&#92;&quot;,&#92;&quot;Qui&#92;&quot;:&#92;&quot;&#92;&quot;,&#92;&quot;Sex&#92;&quot;:&#92;&quot;&#92;&quot;},{&#92;&quot;_marimo_row_id&#92;&quot;:4,&#92;&quot;Per&#92;&#92;u00edodo&#92;&quot;:5,&#92;&quot;Seg&#92;&quot;:&#92;&quot;&#92;&quot;,&#92;&quot;Ter&#92;&quot;:&#92;&quot;&#92;&quot;,&#92;&quot;Qua&#92;&quot;:&#92;&quot;&#92;&quot;,&#92;&quot;Qui&#92;&quot;:&#92;&quot;&#92;&quot;,&#92;&quot;Sex&#92;&quot;:&#92;&quot;&#92;&quot;},{&#92;&quot;_marimo_row_id&#92;&quot;:5,&#92;&quot;Per&#92;&#92;u00edodo&#92;&quot;:6,&#92;&quot;Seg&#92;&quot;:&#92;&quot;&#92;&quot;,&#92;&quot;Ter&#92;&quot;:&#92;&quot;&#92;&quot;,&#92;&quot;Qua&#92;&quot;:&#92;&quot;&#92;&quot;,&#92;&quot;Qui&#92;&quot;:&#92;&quot;&#92;&quot;,&#92;&quot;Sex&#92;&quot;:&#92;&quot;&#92;&quot;}]&quot;' data-total-rows='6' data-total-columns='6' data-max-columns='50' data-banner-text='&quot;&quot;' data-pagination='false' data-page-size='10' data-field-types='[[&quot;Per\u00edodo&quot;,[&quot;integer&quot;,&quot;int64&quot;]],[&quot;Seg&quot;,[&quot;string&quot;,&quot;str&quot;]],[&quot;Ter&quot;,[&quot;string&quot;,&quot;str&quot;]],[&quot;Qua&quot;,[&quot;string&quot;,&quot;str&quot;]],[&quot;Qui&quot;,[&quot;string&quot;,&quot;str&quot;]],[&quot;Sex&quot;,[&quot;string&quot;,&quot;str&quot;]]]' data-selection='&quot;multi&quot;' data-show-filters='true' data-show-download='true' data-show-search='true' data-show-column-summaries='false' data-show-data-types='true' data-show-page-size-selector='true' data-show-column-explorer='true' data-show-chart-builder='true' data-row-headers='[]' data-hidden-columns='[]' data-has-stable-row-id='true' data-lazy='false' data-preload='false'></marimo-table></marimo-ui-element></div><div style='display: flex;flex: 1;flex-direction: column;justify-content: flex-start;align-items: normal;flex-wrap: nowrap;gap: 0.5rem'><span class=\"markdown prose dark:prose-invert contents\"><h3 id=\"prof-carla\">Prof. Carla</h3></span><marimo-ui-element object-id='SdmI-2' random-id='e3dc0637-77ed-b5f7-0e8a-fb53fa7772dd'><marimo-table data-initial-value='[]' data-label='null' data-data='&quot;[{&#92;&quot;_marimo_row_id&#92;&quot;:0,&#92;&quot;Per&#92;&#92;u00edodo&#92;&quot;:1,&#92;&quot;Seg&#92;&quot;:&#92;&quot;&#92;&quot;,&#92;&quot;Ter&#92;&quot;:&#92;&quot;Ci&#92;&#92;u00eancias - 7&#92;&#92;u00baA (Laborat&#92;&#92;u00f3rio)&#92;&quot;,&#92;&quot;Qua&#92;&quot;:&#92;&quot;Ci&#92;&#92;u00eancias - 7&#92;&#92;u00baB (Laborat&#92;&#92;u00f3rio)&#92;&quot;,&#92;&quot;Qui&#92;&quot;:&#92;&quot;&#92;&quot;,&#92;&quot;Sex&#92;&quot;:&#92;&quot;&#92;&quot;},{&#92;&quot;_marimo_row_id&#92;&quot;:1,&#92;&quot;Per&#92;&#92;u00edodo&#92;&quot;:2,&#92;&quot;Seg&#92;&quot;:&#92;&quot;&#92;&quot;,&#92;&quot;Ter&#92;&quot;:&#92;&quot;&#92;&quot;,&#92;&quot;Qua&#92;&quot;:&#92;&quot;Ci&#92;&#92;u00eancias - 7&#92;&#92;u00baA (Laborat&#92;&#92;u00f3rio)&#92;&quot;,&#92;&quot;Qui&#92;&quot;:&#92;&quot;&#92;&quot;,&#92;&quot;Sex&#92;&quot;:&#92;&quot;&#92;&quot;},{&#92;&quot;_marimo_row_id&#92;&quot;:2,&#92;&quot;Per&#92;&#92;u00edodo&#92;&quot;:3,&#92;&quot;Seg&#92;&quot;:&#92;&quot;&#92;&quot;,&#92;&quot;Ter&#92;&quot;:&#92;&quot;&#92;&quot;,&#92;&quot;Qua&#92;&quot;:&#92;&quot;&#92;&quot;,&#92;&quot;Qui&#92;&quot;:&#92;&quot;&#92;&quot;,&#92;&quot;Sex&#92;&quot;:&#92;&quot;Ci&#92;&#92;u00eancias - 7&#92;&#92;u00baB (Laborat&#92;&#92;u00f3rio)&#92;&quot;},{&#92;&quot;_marimo_row_id&#92;&quot;:3,&#92;&quot;Per&#92;&#92;u00edodo&#92;&quot;:4,&#92;&quot;Seg&#92;&quot;:&#92;&quot;&#92;&quot;,&#92;&quot;Ter&#92;&quot;:&#92;&quot;&#92;&quot;,&#92;&quot;Qua&#92;&quot;:&#92;&quot;&#92;&quot;,&#92;&quot;Qui&#92;&quot;:&#92;&quot;Ci&#92;&#92;u00eancias - 7&#92;&#92;u00baB (Laborat&#92;&#92;u00f3rio)&#92;&quot;,&#92;&quot;Sex&#92;&quot;:&#92;&quot;&#92;&quot;},{&#92;&quot;_marimo_row_id&#92;&quot;:4,&#92;&quot;Per&#92;&#92;u00edodo&#92;&quot;:5,&#92;&quot;Seg&#92;&quot;:&#92;&quot;Ci&#92;&#92;u00eancias - 7&#92;&#92;u00baA (Laborat&#92;&#92;u00f3rio)&#92;&quot;,&#92;&quot;Ter&#92;&quot;:&#92;&quot;&#92;&quot;,&#92;&quot;Qua&#92;&quot;:&#92;&quot;&#92;&quot;,&#92;&quot;Qui&#92;&quot;:&#92;&quot;&#92;&quot;,&#92;&quot;Sex&#92;&quot;:&#92;&quot;&#92;&quot;},{&#92;&quot;_marimo_row_id&#92;&quot;:5,&#92;&quot;Per&#92;&#92;u00edodo&#92;&quot;:6,&#92;&quot;Seg&#92;&quot;:&#92;&quot;&#92;&quot;,&#92;&quot;Ter&#92;&quot;:&#92;&quot;&#92;&quot;,&#92;&quot;Qua&#92;&quot;:&#92;&quot;&#92;&quot;,&#92;&quot;Qui&#92;&quot;:&#92;&quot;&#92;&quot;,&#92;&quot;Sex&#92;&quot;:&#92;&quot;&#92;&quot;}]&quot;' data-total-rows='6' data-total-columns='6' data-max-columns='50' data-banner-text='&quot;&quot;' data-pagination='false' data-page-size='10' data-field-types='[[&quot;Per\u00edodo&quot;,[&quot;integer&quot;,&quot;int64&quot;]],[&quot;Seg&quot;,[&quot;string&quot;,&quot;str&quot;]],[&quot;Ter&quot;,[&quot;string&quot;,&quot;str&quot;]],[&quot;Qua&quot;,[&quot;string&quot;,&quot;str&quot;]],[&quot;Qui&quot;,[&quot;string&quot;,&quot;str&quot;]],[&quot;Sex&quot;,[&quot;string&quot;,&quot;str&quot;]]]' data-selection='&quot;multi&quot;' data-show-filters='true' data-show-download='true' data-show-search='true' data-show-column-summaries='false' data-show-data-types='true' data-show-page-size-selector='true' data-show-column-explorer='true' data-show-chart-builder='true' data-row-headers='[]' data-hidden-columns='[]' data-has-stable-row-id='true' data-lazy='false' data-preload='false'></marimo-table></marimo-ui-element></div><div style='display: flex;flex: 1;flex-direction: column;justify-content: flex-start;align-items: normal;flex-wrap: nowrap;gap: 0.5rem'><span class=\"markdown prose dark:prose-invert contents\"><h3 id=\"prof-diana\">Prof. Diana</h3></span><marimo-ui-element object-id='SdmI-3' random-id='b2b5a48e-9c76-369e-6a1c-1308879cf7b1'><marimo-table data-initial-value='[]' data-label='null' data-data='&quot;[{&#92;&quot;_marimo_row_id&#92;&quot;:0,&#92;&quot;Per&#92;&#92;u00edodo&#92;&quot;:1,&#92;&quot;Seg&#92;&quot;:&#92;&quot;Hist&#92;&#92;u00f3ria - 7&#92;&#92;u00baB (Sala Normal)&#92;&quot;,&#92;&quot;Ter&#92;&quot;:&#92;&quot;Ingl&#92;&#92;u00eas - 7&#92;&#92;u00baB (Sala Normal)&#92;&quot;,&#92;&quot;Qua&#92;&quot;:&#92;&quot;&#92;&quot;,&#92;&quot;Qui&#92;&quot;:&#92;&quot;&#92;&quot;,&#92;&quot;Sex&#92;&quot;:&#92;&quot;&#92;&quot;},{&#92;&quot;_marimo_row_id&#92;&quot;:1,&#92;&quot;Per&#92;&#92;u00edodo&#92;&quot;:2,&#92;&quot;Seg&#92;&quot;:&#92;&quot;Hist&#92;&#92;u00f3ria - 7&#92;&#92;u00baA (Sala Normal)&#92;&quot;,&#92;&quot;Ter&#92;&quot;:&#92;&quot;Hist&#92;&#92;u00f3ria - 7&#92;&#92;u00baB (Sala Normal)&#92;&quot;,&#92;&quot;Qua&#92;&quot;:&#92;&quot;&#92;&quot;,&#92;&quot;Qui&#92;&quot;:&#92;&quot;&#92;&quot;,&#92;&quot;Sex&#92;&quot;:&#92;&quot;&#92;&quot;},{&#92;&quot;_marimo_row_id&#92;&quot;:2,&#92;&quot;Per&#92;&#92;u00edodo&#92;&quot;:3,&#92;&quot;Seg&#92;&quot;:&#92;&quot;Ingl&#92;&#92;u00eas - 7&#92;&#92;u00baB (Sala Normal)&#92;&quot;,&#92;&quot;Ter&#92;&quot;:&#92;&quot;&#92;&quot;,&#92;&quot;Qua&#92;&quot;:&#92;&quot;&#92;&quot;,&#92;&quot;Qui&#92;&quot;:&#92;&quot;&#92;&quot;,&#92;&quot;Sex&#92;&quot;:&#92;&quot;Hist&#92;&#92;u00f3ria - 7&#92;&#92;u00baA (Sala Normal)&#92;&quot;},{&#92;&quot;_marimo_row_id&#92;&quot;:3,&#92;&quot;Per&#92;&#92;u00edodo&#92;&quot;:4,&#92;&quot;Seg&#92;&quot;:&#92;&quot;Ingl&#92;&#92;u00eas - 7&#92;&#92;u00baA (Sala Normal)&#92;&quot;,&#92;&quot;Ter&#92;&quot;:&#92;&quot;&#92;&quot;,&#92;&quot;Qua&#92;&quot;:&#92;&quot;&#92;&quot;,&#92;&quot;Qui&#92;&quot;:&#92;&quot;&#92;&quot;,&#92;&quot;Sex&#92;&quot;:&#92;&quot;Ingl&#92;&#92;u00eas - 7&#92;&#92;u00baA (Sala Normal)&#92;&quot;},{&#92;&quot;_marimo_row_id&#92;&quot;:4,&#92;&quot;Per&#92;&#92;u00edodo&#92;&quot;:5,&#92;&quot;Seg&#92;&quot;:&#92;&quot;&#92;&quot;,&#92;&quot;Ter&#92;&quot;:&#92;&quot;&#92;&quot;,&#92;&quot;Qua&#92;&quot;:&#92;&quot;&#92;&quot;,&#92;&quot;Qui&#92;&quot;:&#92;&quot;&#92;&quot;,&#92;&quot;Sex&#92;&quot;:&#92;&quot;&#92;&quot;},{&#92;&quot;_marimo_row_id&#92;&quot;:5,&#92;&quot;Per&#92;&#92;u00edodo&#92;&quot;:6,&#92;&quot;Seg&#92;&quot;:&#92;&quot;&#92;&quot;,&#92;&quot;Ter&#92;&quot;:&#92;&quot;&#92;&quot;,&#92;&quot;Qua&#92;&quot;:&#92;&quot;&#92;&quot;,&#92;&quot;Qui&#92;&quot;:&#92;&quot;&#92;&quot;,&#92;&quot;Sex&#92;&quot;:&#92;&quot;&#92;&quot;}]&quot;' data-total-rows='6' data-total-columns='6' data-max-columns='50' data-banner-text='&quot;&quot;' data-pagination='false' data-page-size='10' data-field-types='[[&quot;Per\u00edodo&quot;,[&quot;integer&quot;,&quot;int64&quot;]],[&quot;Seg&quot;,[&quot;string&quot;,&quot;str&quot;]],[&quot;Ter&quot;,[&quot;string&quot;,&quot;str&quot;]],[&quot;Qua&quot;,[&quot;string&quot;,&quot;str&quot;]],[&quot;Qui&quot;,[&quot;string&quot;,&quot;str&quot;]],[&quot;Sex&quot;,[&quot;string&quot;,&quot;str&quot;]]]' data-selection='&quot;multi&quot;' data-show-filters='true' data-show-download='true' data-show-search='true' data-show-column-summaries='false' data-show-data-types='true' data-show-page-size-selector='true' data-show-column-explorer='true' data-show-chart-builder='true' data-row-headers='[]' data-hidden-columns='[]' data-has-stable-row-id='true' data-lazy='false' data-preload='false'></marimo-table></marimo-ui-element></div><div style='display: flex;flex: 1;flex-direction: column;justify-content: flex-start;align-items: normal;flex-wrap: nowrap;gap: 0.5rem'><span class=\"markdown prose dark:prose-invert contents\"><h3 id=\"prof-eduardo\">Prof. Eduardo</h3></span><marimo-ui-element object-id='SdmI-4' random-id='d617b88d-c202-d387-45d4-4300ec577677'><marimo-table data-initial-value='[]' data-label='null' data-data='&quot;[{&#92;&quot;_marimo_row_id&#92;&quot;:0,&#92;&quot;Per&#92;&#92;u00edodo&#92;&quot;:1,&#92;&quot;Seg&#92;&quot;:&#92;&quot;&#92;&quot;,&#92;&quot;Ter&#92;&quot;:&#92;&quot;&#92;&quot;,&#92;&quot;Qua&#92;&quot;:&#92;&quot;&#92;&quot;,&#92;&quot;Qui&#92;&quot;:&#92;&quot;&#92;&quot;,&#92;&quot;Sex&#92;&quot;:&#92;&quot;&#92;&quot;},{&#92;&quot;_marimo_row_id&#92;&quot;:1,&#92;&quot;Per&#92;&#92;u00edodo&#92;&quot;:2,&#92;&quot;Seg&#92;&quot;:&#92;&quot;&#92;&quot;,&#92;&quot;Ter&#92;&quot;:&#92;&quot;&#92;&quot;,&#92;&quot;Qua&#92;&quot;:&#92;&quot;&#92;&quot;,&#92;&quot;Qui&#92;&quot;:&#92;&quot;&#92;&quot;,&#92;&quot;Sex&#92;&quot;:&#92;&quot;&#92;&quot;},{&#92;&quot;_marimo_row_id&#92;&quot;:2,&#92;&quot;Per&#92;&#92;u00edodo&#92;&quot;:3,&#92;&quot;Seg&#92;&quot;:&#92;&quot;&#92;&quot;,&#92;&quot;Ter&#92;&quot;:&#92;&quot;&#92;&quot;,&#92;&quot;Qua&#92;&quot;:&#92;&quot;&#92;&quot;,&#92;&quot;Qui&#92;&quot;:&#92;&quot;&#92;&quot;,&#92;&quot;Sex&#92;&quot;:&#92;&quot;&#92;&quot;},{&#92;&quot;_marimo_row_id&#92;&quot;:3,&#92;&quot;Per&#92;&#92;u00edodo&#92;&quot;:4,&#92;&quot;Seg&#92;&quot;:&#92;&quot;&#92;&quot;,&#92;&quot;Ter&#92;&quot;:&#92;&quot;Educa&#92;&#92;u00e7&#92;&#92;u00e3o F&#92;&#92;u00edsica - 7&#92;&#92;u00baA (Gin&#92;&#92;u00e1sio)&#92;&quot;,&#92;&quot;Qua&#92;&quot;:&#92;&quot;&#92;&quot;,&#92;&quot;Qui&#92;&quot;:&#92;&quot;&#92;&quot;,&#92;&quot;Sex&#92;&quot;:&#92;&quot;&#92;&quot;},{&#92;&quot;_marimo_row_id&#92;&quot;:4,&#92;&quot;Per&#92;&#92;u00edodo&#92;&quot;:5,&#92;&quot;Seg&#92;&quot;:&#92;&quot;Educa&#92;&#92;u00e7&#92;&#92;u00e3o F&#92;&#92;u00edsica - 7&#92;&#92;u00baB (Gin&#92;&#92;u00e1sio)&#92;&quot;,&#92;&quot;Ter&#92;&quot;:&#92;&quot;Educa&#92;&#92;u00e7&#92;&#92;u00e3o F&#92;&#92;u00edsica - 7&#92;&#92;u00baA (Gin&#92;&#92;u00e1sio)&#92;&quot;,&#92;&quot;Qua&#92;&quot;:&#92;&quot;&#92;&quot;,&#92;&quot;Qui&#92;&quot;:&#92;&quot;&#92;&quot;,&#92;&quot;Sex&#92;&quot;:&#92;&quot;&#92;&quot;},{&#92;&quot;_marimo_row_id&#92;&quot;:5,&#92;&quot;Per&#92;&#92;u00edodo&#92;&quot;:6,&#92;&quot;Seg&#92;&quot;:&#92;&quot;Educa&#92;&#92;u00e7&#92;&#92;u00e3o F&#92;&#92;u00edsica - 7&#92;&#92;u00baB (Gin&#92;&#92;u00e1sio)&#92;&quot;,&#92;&quot;Ter&#92;&quot;:&#92;&quot;&#92;&quot;,&#92;&quot;Qua&#92;&quot;:&#92;&quot;&#92;&quot;,&#92;&quot;Qui&#92;&quot;:&#92;&quot;&#92;&quot;,&#92;&quot;Sex&#92;&quot;:&#92;&quot;&#92;&quot;}]&quot;' data-total-rows='6' data-total-columns='6' data-max-columns='50' data-banner-text='&quot;&quot;' data-pagination='false' data-page-size='10' data-field-types='[[&quot;Per\u00edodo&quot;,[&quot;integer&quot;,&quot;int64&quot;]],[&quot;Seg&quot;,[&quot;string&quot;,&quot;str&quot;]],[&quot;Ter&quot;,[&quot;string&quot;,&quot;str&quot;]],[&quot;Qua&quot;,[&quot;string&quot;,&quot;str&quot;]],[&quot;Qui&quot;,[&quot;string&quot;,&quot;str&quot;]],[&quot;Sex&quot;,[&quot;string&quot;,&quot;str&quot;]]]' data-selection='&quot;multi&quot;' data-show-filters='true' data-show-download='true' data-show-search='true' data-show-column-summaries='false' data-show-data-types='true' data-show-page-size-selector='true' data-show-column-explorer='true' data-show-chart-builder='true' data-row-headers='[]' data-hidden-columns='[]' data-has-stable-row-id='true' data-lazy='false' data-preload='false'></marimo-table></marimo-ui-element></div></div>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "lgWD",
+      "code_hash": "18d2f70407038841a0dd033c417435d1",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><ul>\n<li><strong>R9.</strong> O teu notebook tem de suportar o seguinte fluxo:<ol>\n<li>Gerar um hor\u00e1rio v\u00e1lido <code>H0</code> a partir de um conjunto de\n   dados inicial (<code>dados/</code>).</li>\n<li>Dada uma pequena altera\u00e7\u00e3o aos recursos \u2014 por exemplo, a\n   que est\u00e1 em <code>dados_v2/</code> (o Prof. Eduardo continua limitado\n   \u00e0s tardes, mas a Prof. Ana passa a estar indispon\u00edvel \u00e0s\n   sextas-feiras nos 2 \u00faltimos tempos) \u2014 gerar um novo hor\u00e1rio\n   v\u00e1lido <code>H1</code> que respeite R1\u2013R8 com os novos dados.</li>\n<li><code>H1</code> deve ser produzido <strong>de forma eficiente</strong> (mais r\u00e1pido\n   do que resolver <code>H1</code> do zero, sem usar <code>H0</code>) e <strong>minimizando\n   o n\u00famero de aulas que mudam de tempo/sala</strong> entre <code>H0</code> e\n   <code>H1</code> \u2014 <code>H1</code> n\u00e3o precisa de ser \u00f3timo em rela\u00e7\u00e3o a O1.</li>\n</ol>\n</li>\n</ul></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "yOPj",
+      "code_hash": "88f8deaef49d6c2114172af6673f93b5",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "fwwy",
+      "code_hash": "6ce5374aef79feafa9f100d8e50481af",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "LJZf",
+      "code_hash": "8960cf02fa61544ff6c03ecf51703f8c",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "urSm",
+      "code_hash": "366d646c754c45d5453873aa61074249",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "jxvo",
+      "code_hash": "94f1b9ea0f9819a51063dd1fb72441bf",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "mWxS",
+      "code_hash": "de7e2827500bbd54090bccc096412c1b",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "CcZR",
+      "code_hash": "1b195bb515b636d4983968d11eee321a",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": [
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "Status H1: 0\nTempo H1: 0.013385295867919922\n",
+          "mimetype": "text/plain"
+        }
+      ]
+    },
+    {
+      "id": "YWSi",
+      "code_hash": "15f98175a61f19da116a0e7294fd65ed",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": [
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "Aulas alteradas: 0\n",
+          "mimetype": "text/plain"
+        }
+      ]
+    },
+    {
+      "id": "zlud",
+      "code_hash": "ccf7121f708e63901e3631ab9a095de6",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "tZnO",
+      "code_hash": "e8ca3a12d13051c915c048262b13ec35",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "xvXZ",
+      "code_hash": "fd6e2047cccf4cd50834a64816b27645",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "CLip",
+      "code_hash": "cba927462f21596fbc8e57baedc9ed18",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": [
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "Status H1 do zero: 0\nTempo H1 do zero: 0.10028266906738281\n",
+          "mimetype": "text/plain"
+        }
+      ]
+    },
+    {
+      "id": "YECM",
+      "code_hash": "c0da380548224cd4fce368ca970492a3",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": [
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "----- COMPARA\u00c7\u00c3O R9 -----\nH1 incremental: 0.013385295867919922 segundos\nH1 do zero: 0.10028266906738281 segundos\nAulas alteradas: 0\n",
+          "mimetype": "text/plain"
+        }
+      ]
+    },
+    {
+      "id": "cEAS",
+      "code_hash": "8789b60ffee84904883350e241160092",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"></span>"
           }
         }
       ],
