@@ -1,0 +1,343 @@
+{
+  "version": "1",
+  "metadata": {
+    "marimo_version": "0.25.0",
+    "script_metadata_hash": null
+  },
+  "cells": [
+    {
+      "id": "Hbol",
+      "code_hash": "1d0db38904205bec4d6f6f6a1f6cec3e",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "MJUe",
+      "code_hash": "c3d0fc0d9dfbc0ffe2862cbf13d72d68",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h1 id=\"logica-computacional-multiplicacao-de-inteiros\">L\u00f3gica Computacional \u2014 Multiplica\u00e7\u00e3o de Inteiros</h1>\n<span class=\"paragraph\">Resolu\u00e7\u00e3o organizada segundo a ficha <strong>Verifica\u00e7\u00e3o Indutiva</strong>.\nO modelo usa <code>BitVec</code> de 8 bits e o solver Z3.</span>\n<span class=\"paragraph\"><strong>Estados do programa:</strong> <code>INIT</code>, <code>TEST</code>, <code>END</code> e <code>ERROR</code>.</span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "vblA",
+      "code_hash": "5388ea1484f17a8d5bdb88c0f5b96415",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "bkHC",
+      "code_hash": "ebce58852b9886136ff976a8e83f531f",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h2 id=\"alinea-a-construcao-do-sfots\">Al\u00ednea a \u2014 Constru\u00e7\u00e3o do SFOTS</h2>\n<span class=\"paragraph\">Cada estado cont\u00e9m o contador de programa (<code>pc</code>), os valores de entrada\n(<code>a</code>, <code>b</code>) e as vari\u00e1veis de trabalho (<code>x</code>, <code>y</code>, <code>z</code>).</span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "lEQa",
+      "code_hash": "4a89e94a36305eede82a3d908f1c1825",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "PKri",
+      "code_hash": "e60097f4be0972ac24c4cdfbecf97035",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "Xref",
+      "code_hash": "10e665a0934be391ec648ba41770e236",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "SFPL",
+      "code_hash": "0b158b649cd7a8086453054ea0284411",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": [
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "Existe uma transi\u00e7\u00e3o poss\u00edvel a partir de um estado inicial? sat\nModelo: [a_1 = 0,\n x_1 = 0,\n b_1 = 0,\n b_0 = 0,\n z_0 = 0,\n y_1 = 0,\n y_0 = 0,\n pc_0 = 0,\n x_0 = 0,\n pc_1 = 1,\n a_0 = 0,\n z_1 = 0]\n",
+          "mimetype": "text/plain"
+        }
+      ]
+    },
+    {
+      "id": "BYtC",
+      "code_hash": "2b7b65bce54f5dc304420b09e6bf0fa5",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h2 id=\"alinea-b-verificacao-do-invariante-por-inducao\">Al\u00ednea b \u2014 Verifica\u00e7\u00e3o do invariante por indu\u00e7\u00e3o</h2>\n<span class=\"paragraph\">Pretende-se verificar:</span>\n<marimo-tex class=\"arithmatex\">||[\n\\phi(s) \\equiv x \\times y + z = a \\times b\n||]</marimo-tex><span class=\"paragraph\">Seguindo a ficha, verificamos duas condi\u00e7\u00f5es:</span>\n<ul>\n<li><strong>Caso base:</strong> n\u00e3o existe estado inicial que viole o invariante.</li>\n<li><strong>Passo indutivo:</strong> n\u00e3o existe transi\u00e7\u00e3o de um estado que satisfaz\n  o invariante para outro estado que o viole.</li>\n</ul></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "RGSE",
+      "code_hash": "b35b97bbef950ff53e998133c2719252",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "Kclp",
+      "code_hash": "f797025807f1483b8d0fc30ffdaab392",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": [
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "Propriedade verificada com sucesso\n",
+          "mimetype": "text/plain"
+        }
+      ]
+    },
+    {
+      "id": "emfo",
+      "code_hash": "883b067c223f7d0eabaaa6a347a788d0",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\"><strong>Conclus\u00e3o da al\u00ednea b.</strong> Se o caso base e o passo indutivo devolverem\n<code>unsat</code>, n\u00e3o existe contraexemplo para nenhuma das duas condi\u00e7\u00f5es.\nLogo, o invariante \u00e9 preservado em todas as execu\u00e7\u00f5es do SFOTS.</span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "Hstk",
+      "code_hash": "6f923a50331502bcfdbdac69513c9775",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h2 id=\"alinea-c-verificacao-da-seguranca\">Al\u00ednea c \u2014 Verifica\u00e7\u00e3o da seguran\u00e7a</h2>\n<span class=\"paragraph\">Restringimos os estados iniciais a:</span>\n<marimo-tex class=\"arithmatex\">||[\na &lt; 2^{n/2} \\quad\\land\\quad b &lt; 2^{n/2}\n||]</marimo-tex><span class=\"paragraph\">Para <marimo-tex class=\"arithmatex\">||(n=8||)</marimo-tex>, isto corresponde a <marimo-tex class=\"arithmatex\">||(a&lt;16||)</marimo-tex> e <marimo-tex class=\"arithmatex\">||(b&lt;16||)</marimo-tex>.\nUsamos um invariante auxiliar que tamb\u00e9m limita o valor interm\u00e9dio\n<marimo-tex class=\"arithmatex\">||(x\\times y+z||)</marimo-tex> e exclui o estado <code>ERROR</code>.</span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "nWHF",
+      "code_hash": "8d18b9e18bb0e21eeaed678ea2b51520",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "iLit",
+      "code_hash": "fbbf538b7a0447fffc6b9118511c1b43",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "ZHCJ",
+      "code_hash": "3a93074aa0536b18e2a1bb995d4c1a07",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": [
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "Propriedade verificada com sucesso\n",
+          "mimetype": "text/plain"
+        }
+      ]
+    },
+    {
+      "id": "ROlb",
+      "code_hash": "ab078245c20e38dd9c9fe7684ad2ae42",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h3 id=\"testes-de-execucao\">Testes de execu\u00e7\u00e3o</h3>\n<span class=\"paragraph\">Os testes seguintes verificam exemplos concretos. S\u00e3o complementares\n\u00e0 prova por indu\u00e7\u00e3o: n\u00e3o a substituem.</span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "qnkX",
+      "code_hash": "3e3c91c86ffdd67672d34458b65fcb11",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<pre class='text-xs'>True</pre>"
+          }
+        }
+      ],
+      "console": [
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "Teste 1:\nNenhum contraexemplo encontrado at\u00e9 30\nTeste 2:\nNenhum contraexemplo encontrado at\u00e9 30\nTeste 3:\nNenhum contraexemplo encontrado at\u00e9 30\n",
+          "mimetype": "text/plain"
+        }
+      ]
+    },
+    {
+      "id": "TqIu",
+      "code_hash": "2d3f9813f254011eef50eff2629e2608",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h2 id=\"alinea-d-propriedade-de-animacao-terminacao\">Al\u00ednea d \u2014 Propriedade de anima\u00e7\u00e3o: termina\u00e7\u00e3o</h2>\n<span class=\"paragraph\">Consideramos que o programa termina quando chega a <code>END</code> ou <code>ERROR</code>.\nAssim, a propriedade temporal \u00e9:</span>\n<marimo-tex class=\"arithmatex\">||[\nF(pc=END \\lor pc=ERROR)\n||]</marimo-tex><span class=\"paragraph\">Tal como na ficha, procuramos um contraexemplo em forma de <em>loop</em>:\num tra\u00e7o que nunca atinja um estado terminal e cujo \u00faltimo estado\npossa transitar para um estado anterior.</span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "Vxnm",
+      "code_hash": "54b2ffd381abd74ab98a8ab8c9fbff34",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "DnEU",
+      "code_hash": "e925362c877700f704d55bb25e054312",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": [
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "Nenhum contraexemplo encontrado at\u00e9 19 estados.\n",
+          "mimetype": "text/plain"
+        }
+      ]
+    },
+    {
+      "id": "ulZA",
+      "code_hash": "58832886dc4d77792c74269ab26ef13d",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h3 id=\"justificacao-da-terminacao\">Justifica\u00e7\u00e3o da termina\u00e7\u00e3o</h3>\n<span class=\"paragraph\">Em cada passagem pelo estado <code>TEST</code>:</span>\n<ul>\n<li>se <marimo-tex class=\"arithmatex\">||(y=0||)</marimo-tex>, o programa transita para <code>END</code>;</li>\n<li>se <marimo-tex class=\"arithmatex\">||(y||)</marimo-tex> \u00e9 par e n\u00e3o nulo, passa para <marimo-tex class=\"arithmatex\">||(y/2||)</marimo-tex>;</li>\n<li>se <marimo-tex class=\"arithmatex\">||(y||)</marimo-tex> \u00e9 \u00edmpar, passa para <marimo-tex class=\"arithmatex\">||(y-1||)</marimo-tex>;</li>\n<li>se ocorrer overflow, transita para <code>ERROR</code>.</li>\n</ul>\n<span class=\"paragraph\">Portanto, enquanto n\u00e3o chega a um estado terminal, o valor unsigned\nde <marimo-tex class=\"arithmatex\">||(y||)</marimo-tex> diminui estritamente. Como <marimo-tex class=\"arithmatex\">||(y||)</marimo-tex> \u00e9 um <code>BitVec</code> de 8 bits,\ncome\u00e7a entre 0 e 255 e n\u00e3o pode diminuir indefinidamente.</span>\n<span class=\"paragraph\">O maior n\u00famero de itera\u00e7\u00f5es do ciclo \u00e9 limitado: para <marimo-tex class=\"arithmatex\">||(y=255||)</marimo-tex>,\na sequ\u00eancia decrescente \u00e9\n<marimo-tex class=\"arithmatex\">||(255,254,127,126,63,62,31,30,15,14,7,6,3,2,1,0||)</marimo-tex>.\nAssim, n\u00e3o pode existir um <em>loop</em> n\u00e3o terminal. A pesquisa BMC acima\nprocura precisamente esse tipo de contraexemplo.</span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "uGQH",
+      "code_hash": "d289fa0465f6f806bf7943817841a989",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h3 id=\"llm\">LLM</h3>\n<span class=\"paragraph\">link do chat usado como forma de apoio a reslizacao do trabalho: <a href=\"https://chatgpt.com/share/6ae9d4c4-e588-83ed-bc32-8599443ccc98\" rel=\"noopener noreferrer\" target=\"_blank\">https://chatgpt.com/share/6ae9d4c4-e588-83ed-bc32-8599443ccc98</a></span></span>"
+          }
+        }
+      ],
+      "console": []
+    }
+  ]
+}
